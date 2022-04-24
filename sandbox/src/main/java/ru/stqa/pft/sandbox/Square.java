@@ -6,6 +6,7 @@ public class Square {
 
   public Square(double l) {
     this.l = l;
+    System.out.println(l);
   }
 
   public double area() {

@@ -2,7 +2,7 @@ package ru.stqa.pft.sandbox;
 
 public class MyFirstProgram {
   public static void main(String[] args) {
-    String massage = "";
+    //String massage;
     hello("world");
     hello("user");
     hello("Toaster");
