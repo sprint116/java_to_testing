@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.5'
+    implementation 'org.lable.rfc3881.auditlogger.adapter:slf4j:2.3'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.4'
+}
