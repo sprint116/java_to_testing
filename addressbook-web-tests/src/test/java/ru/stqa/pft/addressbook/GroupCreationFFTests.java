@@ -46,7 +46,7 @@ public class GroupCreationFFTests {
   }
   private void fillGroupForm(GroupData groupData) {
     wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys(groupData.name());
+    wd.findElement(By.name("group_name")).sendKeys(groupData.gname());
     wd.findElement(By.name("group_header")).clear();
     wd.findElement(By.name("group_header")).sendKeys(groupData.header());
     wd.findElement(By.name("group_footer")).clear();
