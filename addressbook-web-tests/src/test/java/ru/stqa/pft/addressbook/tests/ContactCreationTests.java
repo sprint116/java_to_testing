@@ -10,5 +10,6 @@ public class ContactCreationTests extends TestBase {
     app.getContactHellper().fillContactsForm(app.gd);
     app.getContactHellper().submitContactsCreation();
     app.returnToMainPage();
+    app.getNavigationHelper().logout();
   }
 }
