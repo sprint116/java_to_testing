@@ -9,13 +9,28 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class GroupCreationTests {
+public class GroupCreationChTests {
   private WebDriver wd;
-  //private JavascriptExecutor js;
+  GroupData gd = new GroupData(
+          "Test1",
+          "Test1",
+          "Test1",
+          "TestName",
+          "LastName",
+          "testing",
+          "Testing",
+          "+79999999999",
+          "test@test.test",
+          "17",
+          "January",
+          "1990",
+          "TestingAddress"
+  );
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() {
     wd = new ChromeDriver();
+
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/group.php");
     wd.findElement(By.name("user")).clear();
@@ -27,18 +42,33 @@ public class GroupCreationTests {
 
   @Test
   public void testGroupCreation() {
-    wd.findElement(By.linkText("groups")).click();
-    wd.findElement(By.name("new")).click();
-    wd.findElement(By.name("group_name")).click();
-    wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys("test1");
-    wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys("test2");
-    wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys("test3");
-    wd.findElement(By.name("submit")).click();
+    initGroupCreation();
+    fillGroupForm(gd);
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
+  private void returnToGroupPage() {
     wd.findElement(By.linkText("group page")).click();
   }
+
+  private void submitGroupCreation() {
+    wd.findElement(By.name("submit")).click();
+  }
+
+  private void fillGroupForm(GroupData groupData) {
+    wd.findElement(By.name("group_name")).clear();
+    wd.findElement(By.name("group_name")).sendKeys(gd.getGname());
+    wd.findElement(By.name("group_header")).clear();
+    wd.findElement(By.name("group_header")).sendKeys(gd.getHeader());
+    wd.findElement(By.name("group_footer")).clear();
+    wd.findElement(By.name("group_footer")).sendKeys(gd.getFooter());
+  }
+
+  private void initGroupCreation() {
+    wd.findElement(By.name("new")).click();
+  }
+
 
   @AfterMethod(alwaysRun = true)
   public void tearDown() {

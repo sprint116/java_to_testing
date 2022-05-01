@@ -11,6 +11,21 @@ import java.util.concurrent.TimeUnit;
 
 public class GroupCreationFFTests {
   private WebDriver wd;
+  GroupData gd = new GroupData(
+          "Test1",
+          "Test1",
+          "Test1",
+          "TestName",
+          "LastName",
+          "testing",
+          "Testing",
+          "+79999999999",
+          "test@test.test",
+          "17",
+          "January",
+          "1990",
+          "TestingAddress"
+  );
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() {
@@ -31,7 +46,7 @@ public class GroupCreationFFTests {
   @Test
   public void testGroupCreation() {
     initGroupCreation();
-    fillGroupForm(new GroupData("Test1", "Test2", "Test3"));
+    fillGroupForm(gd);
     submitGroupCreation();
     returnToGroupPage();
 
@@ -44,13 +59,14 @@ public class GroupCreationFFTests {
   private void submitGroupCreation() {
     wd.findElement(By.name("submit")).click();
   }
-  private void fillGroupForm(GroupData groupData) {
+
+  private void fillGroupForm(GroupData gd) {
     wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys(groupData.gname());
+    wd.findElement(By.name("group_name")).sendKeys(gd.getGname());
     wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys(groupData.header());
+    wd.findElement(By.name("group_header")).sendKeys(gd.getHeader());
     wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys(groupData.footer());
+    wd.findElement(By.name("group_footer")).sendKeys(gd.getFooter());
   }
 
   private void initGroupCreation() {
