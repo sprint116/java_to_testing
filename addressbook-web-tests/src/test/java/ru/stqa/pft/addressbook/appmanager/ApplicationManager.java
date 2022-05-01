@@ -29,8 +29,6 @@ public class ApplicationManager {
           "TestingAddress"
   );
 
-
-
   public void init() {
     wd = new ChromeDriver();
     //wd = new FirefoxDriver();
