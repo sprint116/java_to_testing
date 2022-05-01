@@ -32,7 +32,7 @@ public class GroupCreationChTests {
     wd = new ChromeDriver();
 
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    wd.get("http://localhost/addressbook/group.php");
+    wd.get("http://localhost/addressbook");
     wd.findElement(By.name("user")).clear();
     wd.findElement(By.name("user")).sendKeys("admin");
     wd.findElement(By.name("pass")).clear();
@@ -66,6 +66,7 @@ public class GroupCreationChTests {
   }
 
   private void initGroupCreation() {
+    wd.findElement(By.linkText("groups")).click();
     wd.findElement(By.name("new")).click();
   }
 

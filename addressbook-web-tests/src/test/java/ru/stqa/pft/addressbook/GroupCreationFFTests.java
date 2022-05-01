@@ -35,7 +35,7 @@ public class GroupCreationFFTests {
   }
 
   private void login(String username, String password) {
-    wd.get("http://localhost/addressbook/group.php");
+    wd.get("http://localhost/addressbook");
     wd.findElement(By.name("user")).clear();
     wd.findElement(By.name("user")).sendKeys(username);
     wd.findElement(By.name("pass")).clear();
@@ -70,6 +70,7 @@ public class GroupCreationFFTests {
   }
 
   private void initGroupCreation() {
+    wd.findElement(By.linkText("groups")).click();
     wd.findElement(By.name("new")).click();
   }
 
