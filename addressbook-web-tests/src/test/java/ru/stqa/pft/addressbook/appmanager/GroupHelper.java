@@ -5,21 +5,7 @@ import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 public class GroupHelper {
-  private GroupData gd = new GroupData(
-          "Test1",
-          "Test1",
-          "Test1",
-          "TestName",
-          "LastName",
-          "testing",
-          "Testing",
-          "+79999999999",
-          "test@test.test",
-          "17",
-          "January",
-          "1990",
-          "TestingAddress"
-  );
+
   private WebDriver wd;
 
   public GroupHelper(WebDriver wd) {
@@ -34,7 +20,7 @@ public class GroupHelper {
     wd.findElement(By.name("submit")).click();
   }
 
-  public void fillGroupForm() {
+  public void fillGroupForm(GroupData gd) {
     wd.findElement(By.name("group_name")).clear();
     wd.findElement(By.name("group_name")).sendKeys(gd.getGname());
     wd.findElement(By.name("group_header")).clear();
