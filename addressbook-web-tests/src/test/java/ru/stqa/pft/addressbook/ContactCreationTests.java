@@ -31,6 +31,7 @@ public class ContactCreationTests {
   @BeforeMethod(alwaysRun = true)
   public void setUp() {
     wd = new ChromeDriver();
+    //wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     login("admin", "secret");
   }
@@ -43,7 +44,7 @@ public class ContactCreationTests {
   }
 
   @Test
-  public void testUntitledTestCase() {
+  public void testContactCreation() {
     initContactsCreation();
     fillContactsForm(gd);
     submitContactsCreation();
