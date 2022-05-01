@@ -30,7 +30,25 @@ public class ContactHellper extends HandlerBase {
 
   public void initContactsCreation() {
     click(By.linkText("add new"));
+  }
 
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
 
+  public void buttonDelContact() {
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void deletionСonfirmationСontact() {
+    wd.switchTo().alert().accept();
+  }
+
+  public void changeModificationContact() {
+    click(By.cssSelector("img[alt=\"Edit\"]"));
+  }
+
+  public void submitContactModification() {
+    click((By.xpath("//input[22]")));
   }
 }

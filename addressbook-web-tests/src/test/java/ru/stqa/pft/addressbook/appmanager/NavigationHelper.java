@@ -9,11 +9,19 @@ public class NavigationHelper extends HandlerBase {
     super(wd);
   }
 
+  public void returnToMainPage() {
+    click(By.linkText("home"));
+  }
+
   public void gotoGroupPage() {
     click(By.linkText("groups"));
   }
 
   public void logout() {
     click(By.linkText("Logout"));
+  }
+
+  public void gotoContactsPage() {
+    click(By.linkText("home page"));
   }
 }
