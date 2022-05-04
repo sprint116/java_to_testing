@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
@@ -15,7 +16,9 @@ public class ApplicationManager {
   public GroupData gd = new GroupData(
           "Test1",
           "Test1",
-          "Test1",
+          "Test1"
+  );
+  public ContactData cd = new ContactData(
           "TestName",
           "LastName",
           "testing",
@@ -27,7 +30,6 @@ public class ApplicationManager {
           "1990",
           "TestingAddress"
   );
-
   public void init() {
     wd = new ChromeDriver();
     //wd = new FirefoxDriver();

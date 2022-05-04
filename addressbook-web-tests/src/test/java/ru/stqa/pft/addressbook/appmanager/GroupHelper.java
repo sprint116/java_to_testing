@@ -19,7 +19,7 @@ public class GroupHelper extends HandlerBase {
   }
 
   public void fillGroupForm(GroupData gd) {
-    type(By.name("group_name"), gd.getGname());
+    type(By.name("group_name"), gd.getName());
     type(By.name("group_header"), gd.getHeader());
     type(By.name("group_footer"), gd.getFooter());
   }
