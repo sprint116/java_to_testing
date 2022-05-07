@@ -26,10 +26,10 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void logout() {
+    if (isElementPresent(By.name("user")) && isElementPresent(By.name("pass"))) {
+      return;
+    }
     click(By.linkText("Logout"));
   }
 
-  public void gotoContactsPage() {
-    click(By.linkText("home page"));
-  }
 }

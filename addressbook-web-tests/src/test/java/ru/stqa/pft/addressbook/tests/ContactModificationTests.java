@@ -10,6 +10,6 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().changeModificationContact();
     app.getContactHelper().fillContactsForm(app.cd, false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().gotoContactsPage();
+    app.getNavigationHelper().returnToMainPage();
   }
 }
