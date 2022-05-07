@@ -13,13 +13,13 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
   WebDriver wd;
   private NavigationHelper navigationHelper;
-  private ContactHellper contactHellper;
+  private ContactHelper contactHelper;
   private GroupHelper groupHelper;
   private SessionHelper sessionHelper;
   public GroupData gd = new GroupData(
           "Test1",
-          "Test1",
-          "Test1"
+          null,
+          null
   );
   public ContactData cd = new ContactData(
           "TestName",
@@ -51,7 +51,7 @@ public class ApplicationManager {
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook");
     groupHelper = new GroupHelper(wd);
-    contactHellper = new ContactHellper(wd);
+    contactHelper = new ContactHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
@@ -67,8 +67,8 @@ public class ApplicationManager {
     return groupHelper;
   }
 
-  public ContactHellper getContactHellper() {
-    return contactHellper;
+  public ContactHelper getContactHelper() {
+    return contactHelper;
   }
 
   public NavigationHelper getNavigationHelper() {

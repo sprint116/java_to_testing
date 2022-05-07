@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-public class ContactHellper extends HandlerBase {
+public class ContactHelper extends HandlerBase {
 
-  public ContactHellper(WebDriver wd) {
+  public ContactHelper(WebDriver wd) {
     super(wd);
   }
 
@@ -40,7 +40,7 @@ public class ContactHellper extends HandlerBase {
     click(By.xpath("//input[@value='Delete']"));
   }
 
-  public void deletionСonfirmationСontact() {
+  public void deletionConfirmationContact() {
     wd.switchTo().alert().accept();
   }
 
