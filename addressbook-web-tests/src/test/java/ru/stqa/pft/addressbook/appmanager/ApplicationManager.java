@@ -12,7 +12,7 @@ public class ApplicationManager {
   WebDriver wd;
   private NavigationHelper navigationHelper;
   private ContactHelper contactHelper;
-  private GroupHelper groupHelper;
+  public GroupHelper groupHelper;
   private SessionHelper sessionHelper;
   public GroupData gd = new GroupData(
           "Test1",
@@ -57,7 +57,6 @@ public class ApplicationManager {
   }
 
   public void stop() {
-
     wd.quit();
   }
 

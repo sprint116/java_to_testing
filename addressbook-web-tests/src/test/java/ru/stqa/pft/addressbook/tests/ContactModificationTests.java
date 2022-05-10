@@ -7,7 +7,7 @@ public class ContactModificationTests extends TestBase {
   public void testContactModification() {
     app.getNavigationHelper().returnToMainPage();
     if (app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(app.cd, false);
+      app.getContactHelper().createContact(app.cd);
     }
     app.getNavigationHelper().returnToMainPage();
     app.getContactHelper().selectContact();

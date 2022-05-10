@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 public class ContactHelper extends HelperBase {
 
@@ -12,7 +13,24 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
+  public GroupHelper groupHelper;
   public void fillContactsForm(ContactData cd, boolean creation) {
+    if (creation) {
+      if (wd.findElements(By.xpath("//*[@name='new_group']/option")).size() <= 1) {
+        groupHelper = new GroupHelper(wd);
+        GroupData gd = new GroupData(
+                "Test1",
+                "Test2",
+                "Test3"
+        );
+        click(By.linkText("groups"));
+        groupHelper.createGroup(gd);
+        initContactsCreation();
+      }
+      new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
+    } else {
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
     type(By.name("firstname"), cd.getFirstName());
     type(By.name("lastname"), cd.getLastName());
     type(By.name("nickname"), cd.getNickname());
@@ -23,12 +41,6 @@ public class ContactHelper extends HelperBase {
     select(By.name("bmonth"), cd.getBirthdayMonth());
     type(By.name("byear"), cd.getBirthdayYear());
     type(By.name("address2"), cd.getAddress2());
-
-    if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(cd.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
-    }
   }
 
 
@@ -60,7 +72,7 @@ public class ContactHelper extends HelperBase {
     click((By.xpath("//input[22]")));
   }
 
-  public void createContact(ContactData contact, boolean creation) {
+  public void createContact(ContactData contact) {
     initContactsCreation();
     fillContactsForm(contact, true);
     submitContactsCreation();
