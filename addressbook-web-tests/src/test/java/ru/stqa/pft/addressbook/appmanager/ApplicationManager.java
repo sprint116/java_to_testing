@@ -16,8 +16,8 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   public GroupData gd = new GroupData(
           "Test1",
-          null,
-          null
+          "Test2",
+          "Test3"
   );
   public ContactData cd = new ContactData(
           "TestName",
@@ -29,8 +29,7 @@ public class ApplicationManager {
           "17",
           "January",
           "1990",
-          "TestingAddress",
-          "Test1"
+          "TestingAddress"
   );
   private final String browser;
 

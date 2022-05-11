@@ -14,6 +14,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public GroupHelper groupHelper;
+
   public void fillContactsForm(ContactData cd, boolean creation) {
     if (creation) {
       if (wd.findElements(By.xpath("//*[@name='new_group']/option")).size() <= 1) {
@@ -26,8 +27,10 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("groups"));
         groupHelper.createGroup(gd);
         initContactsCreation();
+        new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
+      } else {
+        new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
       }
-      new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
