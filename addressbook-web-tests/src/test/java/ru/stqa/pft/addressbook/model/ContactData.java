@@ -1,6 +1,9 @@
 package ru.stqa.pft.addressbook.model;
 
+import java.util.Objects;
+
 public class ContactData {
+  private final String id;
   private final String firstName;
   private final String lastName;
   private final String nickname;
@@ -15,6 +18,7 @@ public class ContactData {
 
   public ContactData(String firstName, String lastName, String nickname, String address, String mobile, String email,
                      String birthdayDay, String birthdayMonth, String birthdayYear, String address2) {
+    this.id = null;
     this.firstName = firstName;
     this.lastName = lastName;
     this.nickname = nickname;
@@ -25,6 +29,25 @@ public class ContactData {
     this.birthdayMonth = birthdayMonth;
     this.birthdayYear = birthdayYear;
     this.address2 = address2;
+  }
+
+  public ContactData(String id, String firstName, String lastName, String nickname, String address, String mobile, String email,
+                     String birthdayDay, String birthdayMonth, String birthdayYear, String address2) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.nickname = nickname;
+    this.address = address;
+    this.mobile = mobile;
+    this.email = email;
+    this.birthdayDay = birthdayDay;
+    this.birthdayMonth = birthdayMonth;
+    this.birthdayYear = birthdayYear;
+    this.address2 = address2;
+  }
+
+  public String getId() {
+    return id;
   }
 
   public String getFirstName() {
@@ -65,5 +88,26 @@ public class ContactData {
 
   public String getAddress2() {
     return address2;
+  }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id='" + id + '\'' +
+            ", firstName='" + firstName + '\'' +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, firstName);
   }
 }
