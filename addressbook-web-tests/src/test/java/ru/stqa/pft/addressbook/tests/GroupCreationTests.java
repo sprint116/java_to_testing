@@ -24,7 +24,8 @@ public class GroupCreationTests extends TestBase {
         max = g.getId();
       }
     }
-    app.gd.setId(max);
+
+    app.gd.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
     before.add(app.gd);
     Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
   }
