@@ -13,7 +13,8 @@ public class GroupDeletionTests extends TestBase {
       app.getGroupHelper().createGroup(app.gd);
       before++;
     }
-    app.getGroupHelper().selectGroup();
+    int randomGroup = (int) (Math.random() * before);
+    app.getGroupHelper().selectGroup(randomGroup);
     app.getGroupHelper().deleteSelectedGroups();
     app.getGroupHelper().returnToGroupPage();
     int after = app.getGroupHelper().getGroupCount();
