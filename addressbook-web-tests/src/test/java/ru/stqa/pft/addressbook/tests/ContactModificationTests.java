@@ -17,8 +17,8 @@ public class ContactModificationTests extends TestBase {
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     int randomContact = (int) (Math.random() * before.size());
-    app.getContactHelper().selectContact(randomContact);
-    app.getContactHelper().changeModificationContact();
+    System.out.println("randomContact = " + randomContact);
+    app.getContactHelper().changeModificationContact(randomContact);
     ContactData contact = new ContactData(
             before.get(randomContact).getId(),
             "TestName",
