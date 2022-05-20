@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ContactModificationTests extends TestBase {
-  @Test
+  @Test(enabled = false)
   public void testContactModification() {
     app.getNavigationHelper().returnToMainPage();
     if (app.getContactHelper().isThereAContact()) {
@@ -17,11 +17,10 @@ public class ContactModificationTests extends TestBase {
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     int randomContact = (int) (Math.random() * before.size());
-    System.out.println("randomContact = " + randomContact);
     app.getContactHelper().changeModificationContact(randomContact);
     ContactData contact = new ContactData(
             before.get(randomContact).getId(),
-            "TestName",
+            "TestName " + randomContact,
             "LastName",
             "testing",
             "Testing",
@@ -36,7 +35,6 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().returnToMainPage();
     List<ContactData> after = app.getContactHelper().getContactList();
-    app.getNavigationHelper().logout();
     Assert.assertEquals(after.size(), before.size());
 
     before.remove(randomContact);

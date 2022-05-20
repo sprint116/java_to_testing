@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ContactDeletionTests extends TestBase {
-  @Test
+  @Test(enabled = false)
   public void testContactDeletion() {
     app.getNavigationHelper().returnToMainPage();
     if (app.getContactHelper().isThereAContact()) {
@@ -22,7 +22,6 @@ public class ContactDeletionTests extends TestBase {
     app.getContactHelper().deletionConfirmationContact();
     app.getNavigationHelper().returnToMainPage();
     List<ContactData> after = app.getContactHelper().getContactList();
-    app.getNavigationHelper().logout();
     Assert.assertEquals(after.size(), before.size() - 1);
 
     before.remove(randomContact);

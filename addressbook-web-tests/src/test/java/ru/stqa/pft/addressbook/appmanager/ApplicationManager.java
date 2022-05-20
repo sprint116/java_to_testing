@@ -56,6 +56,7 @@ public class ApplicationManager {
   }
 
   public void stop() {
+    getNavigationHelper().logout();
     wd.quit();
   }
 
