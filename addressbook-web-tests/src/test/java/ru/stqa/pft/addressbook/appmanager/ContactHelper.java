@@ -11,6 +11,8 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ru.stqa.pft.addressbook.tests.TestBase.app;
+
 public class ContactHelper extends HelperBase {
 
   public ContactHelper(WebDriver wd) {
@@ -29,7 +31,7 @@ public class ContactHelper extends HelperBase {
                 "Test3"
         );
         click(By.linkText("groups"));
-        groupHelper.createGroup(gd);
+        groupHelper.create(gd);
         initContactsCreation();
         new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
       } else {
@@ -79,10 +81,24 @@ public class ContactHelper extends HelperBase {
     click((By.xpath("//input[22]")));
   }
 
-  public void createContact(ContactData contact) {
+  public void create(ContactData contact) {
     initContactsCreation();
     fillContactsForm(contact, true);
     submitContactsCreation();
+  }
+
+  public void modify(int randomContact, ContactData contact) {
+    changeModificationContact(randomContact);
+    fillContactsForm(contact, false);
+    submitContactModification();
+    app.goTo().MainPage();
+  }
+
+  public void delete(int randomContact) {
+    selectContact(randomContact);
+    buttonDelContact();
+    deletionConfirmationContact();
+    app.goTo().MainPage();
   }
 
   public boolean isThereAContact() {
@@ -93,7 +109,7 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<>();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {

@@ -12,22 +12,19 @@ import java.util.List;
 public class ContactDeletionTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
-    app.getNavigationHelper().returnToMainPage();
-    if (app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(app.cd);
-      app.getNavigationHelper().returnToMainPage();
+    app.goTo().MainPage();
+    if (app.contact().list().size() == 0) {
+      app.contact().create(app.cd);
+      app.goTo().MainPage();
     }
   }
 
   @Test(enabled = false)
   public void testContactDeletion() {
-    List<ContactData> before = app.getContactHelper().getContactList();
+    List<ContactData> before = app.contact().list();
     int randomContact = (int) (Math.random() * before.size());
-    app.getContactHelper().selectContact(randomContact);
-    app.getContactHelper().buttonDelContact();
-    app.getContactHelper().deletionConfirmationContact();
-    app.getNavigationHelper().returnToMainPage();
-    List<ContactData> after = app.getContactHelper().getContactList();
+    app.contact().delete(randomContact);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() - 1);
 
     before.remove(randomContact);
@@ -36,4 +33,6 @@ public class ContactDeletionTests extends TestBase {
     after.sort(byId);
     Assert.assertEquals(before, after);
   }
+
+
 }

@@ -12,18 +12,17 @@ public class ContactModificationTests extends TestBase {
 
   @BeforeMethod
   public void ensurePreconditions() {
-    app.getNavigationHelper().returnToMainPage();
-    if (app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(app.cd);
-      app.getNavigationHelper().returnToMainPage();
+    app.goTo().MainPage();
+    if (app.contact().list().size() == 0) {
+      app.contact().create(app.cd);
+      app.goTo().MainPage();
     }
   }
 
   @Test(enabled = false)
   public void testContactModification() {
-    List<ContactData> before = app.getContactHelper().getContactList();
+    List<ContactData> before = app.contact().list();
     int randomContact = (int) (Math.random() * before.size());
-    app.getContactHelper().changeModificationContact(randomContact);
     ContactData contact = new ContactData(
             before.get(randomContact).getId(),
             "TestName " + randomContact + "/",
@@ -37,10 +36,8 @@ public class ContactModificationTests extends TestBase {
             "1990",
             "TestingAddress"
     );
-    app.getContactHelper().fillContactsForm(contact, false);
-    app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().returnToMainPage();
-    List<ContactData> after = app.getContactHelper().getContactList();
+    app.contact().modify(randomContact, contact);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size());
 
     before.remove(randomContact);
@@ -50,4 +47,6 @@ public class ContactModificationTests extends TestBase {
     after.sort(byId);
     Assert.assertEquals(before, after);
   }
+
+
 }
