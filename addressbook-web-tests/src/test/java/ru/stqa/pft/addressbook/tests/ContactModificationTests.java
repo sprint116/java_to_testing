@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ContactModificationTests extends TestBase {
-  @Test(enabled = false)
+  @Test//(enabled = false)
   public void testContactModification() {
     app.getNavigationHelper().returnToMainPage();
     if (app.getContactHelper().isThereAContact()) {
@@ -20,7 +20,7 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().changeModificationContact(randomContact);
     ContactData contact = new ContactData(
             before.get(randomContact).getId(),
-            "TestName " + randomContact,
+            "TestName " + randomContact + "/",
             "LastName",
             "testing",
             "Testing",

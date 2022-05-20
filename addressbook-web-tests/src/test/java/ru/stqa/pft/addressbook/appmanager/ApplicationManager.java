@@ -19,8 +19,9 @@ public class ApplicationManager {
           "Test2",
           "Test3"
   );
+  int randomContactNumber = (int) (Math.random() * 100);
   public ContactData cd = new ContactData(
-          "TestName",
+          "TestName " + randomContactNumber + "/",
           "LastName",
           "testing",
           "Testing",

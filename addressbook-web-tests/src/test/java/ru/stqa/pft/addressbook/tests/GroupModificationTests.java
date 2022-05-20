@@ -16,12 +16,8 @@ public class GroupModificationTests extends TestBase {
     }
     List<GroupData> before = app.getGroupHelper().getGroupList();
     int randomGroup = (int) (Math.random() * before.size());
-    app.getGroupHelper().selectGroup(randomGroup);
-    app.getGroupHelper().initGroupModification();
-    GroupData group = new GroupData(before.get(randomGroup).getId(), "test1", "test2", "test3");
-    app.getGroupHelper().fillGroupForm(group);
-    app.getGroupHelper().submitGroupModification();
-    app.getGroupHelper().returnToGroupPage();
+    GroupData group = app.gd;
+    app.groupHelper.modifyGroup(randomGroup, group);
     List<GroupData> after = app.getGroupHelper().getGroupList();
     Assert.assertEquals(after.size(), before.size());
 
@@ -32,4 +28,6 @@ public class GroupModificationTests extends TestBase {
     after.sort(byId);
     Assert.assertEquals(before, after);
   }
+
+
 }
