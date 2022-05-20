@@ -101,13 +101,13 @@ public class ContactHelper extends HelperBase {
     app.goTo().MainPage();
   }
 
-  public boolean isThereAContact() {
+  /*public boolean isThereAContact() {
     return !isElementPresent(By.name("selected[]"));
-  }
+  }*/
 
-  public int getContactCount() {
+  /*public int getContactCount() {
     return wd.findElements(By.name("selected[]")).size();
-  }
+  }*/
 
   public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<>();
