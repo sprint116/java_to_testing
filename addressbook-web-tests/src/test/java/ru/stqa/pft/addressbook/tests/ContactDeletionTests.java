@@ -19,7 +19,7 @@ public class ContactDeletionTests extends TestBase {
     }
   }
 
-  @Test(enabled = false)
+  @Test//(enabled = false)
   public void testContactDeletion() {
     List<ContactData> before = app.contact().list();
     int randomContact = (int) (Math.random() * before.size());

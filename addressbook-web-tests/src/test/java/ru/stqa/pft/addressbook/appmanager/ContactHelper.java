@@ -113,18 +113,13 @@ public class ContactHelper extends HelperBase {
       String Address = element.findElement(By.xpath("td[4]")).getText();
       String email = element.findElement(By.xpath("td[5]")).getText();
       String mobile = element.findElement(By.xpath("td[6]")).getText();
-      ContactData contact = new ContactData(
-              id,
-              firstName,
-              lastName,
-              null,
-              Address,
-              mobile,
-              email,
-              null,
-              null,
-              null,
-              null);
+      ContactData contact = new ContactData()
+              .withId(id)
+              .withFirstName(firstName)
+              .withLastName(lastName)
+              .withAddress(Address)
+              .withMobile(mobile)
+              .withEmail(email);
       contacts.add(contact);
     }
     return contacts;

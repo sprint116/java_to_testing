@@ -19,29 +19,18 @@ public class ContactModificationTests extends TestBase {
     }
   }
 
-  @Test(enabled = false)
+  @Test//(enabled = false)
   public void testContactModification() {
     List<ContactData> before = app.contact().list();
     int randomContact = (int) (Math.random() * before.size());
-    ContactData contact = new ContactData(
-            before.get(randomContact).getId(),
-            "TestName " + randomContact + "/",
-            "LastName",
-            "testing",
-            "Testing",
-            "+79999999999",
-            "test@test.test",
-            "17",
-            "January",
-            "1990",
-            "TestingAddress"
-    );
-    app.contact().modify(randomContact, contact);
+    app.cd.withId(before.get(randomContact).getId());
+
+    app.contact().modify(randomContact, app.cd);
     List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size());
 
     before.remove(randomContact);
-    before.add(contact);
+    before.add(app.cd);
     Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
     before.sort(byId);
     after.sort(byId);

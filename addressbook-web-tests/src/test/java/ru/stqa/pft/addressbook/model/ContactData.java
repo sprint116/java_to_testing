@@ -3,55 +3,22 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private int id;
-  private final String firstName;
-  private final String lastName;
-  private final String nickname;
-  private final String address;
-  private final String mobile;
-  private final String email;
-  private final String birthdayDay;
-  private final String birthdayMonth;
-  private final String birthdayYear;
-  private final String address2;
+  private int id = Integer.MAX_VALUE;
+  private String firstName;
+  private String lastName;
+  private String nickname;
+  private String address;
+  private String mobile;
+  private String email;
+  private String birthdayDay;
+  private String birthdayMonth;
+  private String birthdayYear;
+  private String address2;
 
 
-  public ContactData(String firstName, String lastName, String nickname, String address, String mobile, String email,
-                     String birthdayDay, String birthdayMonth, String birthdayYear, String address2) {
-    this.id = Integer.MAX_VALUE;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.nickname = nickname;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.birthdayDay = birthdayDay;
-    this.birthdayMonth = birthdayMonth;
-    this.birthdayYear = birthdayYear;
-    this.address2 = address2;
-  }
-
-  public ContactData(int id, String firstName, String lastName, String nickname, String address, String mobile, String email,
-                     String birthdayDay, String birthdayMonth, String birthdayYear, String address2) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.nickname = nickname;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.birthdayDay = birthdayDay;
-    this.birthdayMonth = birthdayMonth;
-    this.birthdayYear = birthdayYear;
-    this.address2 = address2;
-  }
-
+  /*Getters*/
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getFirstName() {
@@ -93,6 +60,63 @@ public class ContactData {
   public String getAddress2() {
     return address2;
   }
+
+  /*Setters*/
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
+  }
+
+  public ContactData withFirstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+  public ContactData withLastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+  public ContactData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withMobile(String mobile) {
+    this.mobile = mobile;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withBirthdayDay(String birthdayDay) {
+    this.birthdayDay = birthdayDay;
+    return this;
+  }
+
+  public ContactData withBirthdayMonth(String birthdayMonth) {
+    this.birthdayMonth = birthdayMonth;
+    return this;
+  }
+
+  public ContactData withBirthdayYear(String birthdayYear) {
+    this.birthdayYear = birthdayYear;
+    return this;
+  }
+
+  public ContactData withAddress2(String address2) {
+    this.address2 = address2;
+    return this;
+  }
+
 
   @Override
   public String toString() {

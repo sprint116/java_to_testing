@@ -22,13 +22,14 @@ public class GroupModificationTests extends TestBase {
   public void testGroupModification() {
     List<GroupData> before = app.group().list();
     int randomGroup = (int) (Math.random() * before.size());
-    GroupData group = app.gd;
-    app.groupHelper.modify(randomGroup, group);
+    app.gd.withId(before.get(randomGroup).getId());
+
+    app.group().modify(randomGroup, app.gd);
     List<GroupData> after = app.group().list();
     Assert.assertEquals(after.size(), before.size());
 
     before.remove(randomGroup);
-    before.add(group);
+    before.add(app.gd);
     Comparator<? super GroupData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
     before.sort(byId);
     after.sort(byId);

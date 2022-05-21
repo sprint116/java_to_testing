@@ -17,18 +17,17 @@ public class ApplicationManager {
   public GroupData gd = new GroupData().withName("TestName " + (int) (Math.random() * 100) + "/");
 
 
-  public ContactData cd = new ContactData(
-          "TestName " + (int) (Math.random() * 100) + "/",
-          "LastName",
-          "testing",
-          "Testing",
-          "+79999999999",
-          "test@test.test",
-          "17",
-          "January",
-          "1990",
-          "TestingAddress"
-  );
+  public ContactData cd = new ContactData()
+          .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
+          .withLastName("LastName")
+          .withNickname("testing")
+          .withAddress("Testing")
+          .withMobile("+79999999999")
+          .withEmail("test@test.test")
+          .withBirthdayDay("17")
+          .withBirthdayMonth("January")
+          .withBirthdayYear("1990")
+          .withAddress2("TestingAddress");
   private final String browser;
 
   public ApplicationManager(String browser) {
@@ -54,7 +53,7 @@ public class ApplicationManager {
   }
 
   public void stop() {
-    goTo().logout();
+    sessionHelper.logout();
     wd.quit();
   }
 
