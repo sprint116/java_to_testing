@@ -22,9 +22,7 @@ public class GroupModificationTests extends TestBase {
   public void testGroupModification() {
     List<GroupData> before = app.group().list();
     int randomGroup = (int) (Math.random() * before.size());
-    app.gd.withId(before.get(randomGroup).getId());
-
-    app.group().modify(randomGroup, app.gd);
+    app.group().modify(randomGroup, app.gd.withId(before.get(randomGroup).getId()));
     List<GroupData> after = app.group().list();
     Assert.assertEquals(after.size(), before.size());
 

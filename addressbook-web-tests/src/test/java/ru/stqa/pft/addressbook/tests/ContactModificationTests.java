@@ -25,7 +25,7 @@ public class ContactModificationTests extends TestBase {
     int randomContact = (int) (Math.random() * before.size());
     app.cd.withId(before.get(randomContact).getId());
 
-    app.contact().modify(randomContact, app.cd);
+    app.contact().modify(randomContact, app.cd.withId(before.get(randomContact).getId()));
     List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size());
 
