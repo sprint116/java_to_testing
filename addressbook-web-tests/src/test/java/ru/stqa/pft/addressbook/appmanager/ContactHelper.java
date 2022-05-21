@@ -8,7 +8,9 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static ru.stqa.pft.addressbook.tests.TestBase.app;
 
@@ -105,6 +107,28 @@ public class ContactHelper extends HelperBase {
 
   public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<>();
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for (WebElement element : elements) {
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      String firstName = element.findElement(By.xpath("td[3]")).getText();
+      String lastName = element.findElement(By.xpath("td[2]")).getText();
+      String Address = element.findElement(By.xpath("td[4]")).getText();
+      String email = element.findElement(By.xpath("td[5]")).getText();
+      String mobile = element.findElement(By.xpath("td[6]")).getText();
+      ContactData contact = new ContactData()
+              .withId(id)
+              .withFirstName(firstName)
+              .withLastName(lastName)
+              .withAddress(Address)
+              .withMobile(mobile)
+              .withEmail(email);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
+
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<>();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
