@@ -14,14 +14,11 @@ public class ApplicationManager {
   private ContactHelper contactHelper;
   public GroupHelper groupHelper;
   private SessionHelper sessionHelper;
-  public GroupData gd = new GroupData(
-          "Test1",
-          "Test2",
-          "Test3"
-  );
-  int randomContactNumber = (int) (Math.random() * 100);
+  public GroupData gd = new GroupData().withName("TestName " + (int) (Math.random() * 100) + "/");
+
+
   public ContactData cd = new ContactData(
-          "TestName " + randomContactNumber + "/",
+          "TestName " + (int) (Math.random() * 100) + "/",
           "LastName",
           "testing",
           "Testing",

@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,13 +24,8 @@ public class ContactHelper extends HelperBase {
     if (creation) {
       if (wd.findElements(By.xpath("//*[@name='new_group']/option")).size() <= 1) {
         groupHelper = new GroupHelper(wd);
-        GroupData gd = new GroupData(
-                "Test1",
-                "Test2",
-                "Test3"
-        );
         click(By.linkText("groups"));
-        groupHelper.create(gd);
+        groupHelper.create(app.gd);
         initContactsCreation();
         new Select(wd.findElement(By.xpath("//*[@name='new_group']"))).selectByIndex(1);
       } else {
