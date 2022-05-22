@@ -8,12 +8,19 @@ public class ContactData {
   private String lastName;
   private String nickname;
   private String address;
+  private String homePhone;
   private String mobile;
+  private String workPhone;
   private String email;
+  private String email2;
+  private String email3;
   private String birthdayDay;
   private String birthdayMonth;
   private String birthdayYear;
   private String address2;
+  private String allPhones;
+  private String allEmails;
+
 
 
   /*Getters*/
@@ -37,12 +44,28 @@ public class ContactData {
     return address;
   }
 
+  public String getHomePhone() {
+    return homePhone;
+  }
+
   public String getMobile() {
     return mobile;
   }
 
+  public String getWorkPhone() {
+    return workPhone;
+  }
+
   public String getEmail() {
     return email;
+  }
+
+  public String getEmail2() {
+    return email2;
+  }
+
+  public String getEmail3() {
+    return email3;
   }
 
   public String getBirthdayDay() {
@@ -59,6 +82,14 @@ public class ContactData {
 
   public String getAddress2() {
     return address2;
+  }
+
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public String getAllEmails() {
+    return allEmails;
   }
 
   /*Setters*/
@@ -87,13 +118,33 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
     return this;
   }
 
+  public ContactData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
+
   public ContactData withEmail(String email) {
     this.email = email;
+    return this;
+  }
+
+  public ContactData withEmail2(String email2) {
+    this.email2 = email2;
+    return this;
+  }
+
+  public ContactData withEmail3(String email3) {
+    this.email3 = email3;
     return this;
   }
 
@@ -114,6 +165,16 @@ public class ContactData {
 
   public ContactData withAddress2(String address2) {
     this.address2 = address2;
+    return this;
+  }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
+  public ContactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
     return this;
   }
 
