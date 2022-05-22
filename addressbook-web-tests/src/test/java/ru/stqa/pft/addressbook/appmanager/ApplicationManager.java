@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.BrowserType;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.util.concurrent.TimeUnit;
+
 public class ApplicationManager {
   WebDriver wd;
   private NavigationHelper navigationHelper;
@@ -43,7 +45,7 @@ public class ApplicationManager {
       wd = new InternetExplorerDriver();
     }
 
-    //wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    //wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook");
     groupHelper = new GroupHelper(wd);
     contactHelper = new ContactHelper(wd);

@@ -68,7 +68,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void changeModificationContactById(int id) {
-    wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
+    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
   }
 
   public void submitContactModification() {
@@ -79,32 +79,41 @@ public class ContactHelper extends HelperBase {
     initContactsCreation();
     fillContactsForm(contact, true);
     submitContactsCreation();
+    contsctCache = null;
+    app.goTo().mainPage();
   }
 
   public void modify(ContactData contact) {
     changeModificationContactById(contact.getId());
     fillContactsForm(contact, false);
     submitContactModification();
-    app.goTo().MainPage();
+    contsctCache = null;
+    app.goTo().mainPage();
   }
 
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
     buttonDelContact();
     deletionConfirmationContact();
-    app.goTo().MainPage();
+    contsctCache = null;
+    app.goTo().mainPage();
   }
 
   /*public boolean isThereAContact() {
     return !isElementPresent(By.name("selected[]"));
   }*/
 
-  /*public int getContactCount() {
+  public int count() {
     return wd.findElements(By.name("selected[]")).size();
-  }*/
+  }
+
+  private Contacts contsctCache = null;
 
   public Contacts all() {
-    Contacts contacts = new Contacts();
+    if (contsctCache != null) {
+      return new Contacts(contsctCache);
+    }
+    contsctCache = new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
@@ -120,8 +129,8 @@ public class ContactHelper extends HelperBase {
               .withAddress(Address)
               .withMobile(mobile)
               .withEmail(email);
-      contacts.add(contact);
+      contsctCache.add(contact);
     }
-    return contacts;
+    return new Contacts(contsctCache);
   }
 }
