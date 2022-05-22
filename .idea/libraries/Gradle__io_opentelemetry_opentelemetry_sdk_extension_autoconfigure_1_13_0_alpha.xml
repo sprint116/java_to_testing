@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.13.0-alpha">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.13.0-alpha/f01d20fb5b8a314c4ae69c34f1c2cbbe7c78c71f/opentelemetry-sdk-extension-autoconfigure-1.13.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.13.0-alpha/1494f96a4f1733ca444a48d5056657ea9d981b5/opentelemetry-sdk-extension-autoconfigure-1.13.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

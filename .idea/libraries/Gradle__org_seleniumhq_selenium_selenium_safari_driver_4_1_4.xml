@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.seleniumhq.selenium:selenium-safari-driver:4.1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-safari-driver/4.1.4/d882231dd0a27954a4c1ba627c28b5880edcc6e0/selenium-safari-driver-4.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-safari-driver/4.1.4/b602f613848f9ce2fcd8a0e45d83cab6915f7276/selenium-safari-driver-4.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
