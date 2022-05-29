@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.BrowserType;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -19,10 +20,12 @@ public class ApplicationManager {
   public GroupData gd = new GroupData().withName("TestName " + (int) (Math.random() * 100) + "/");
 
 
+  public File photo = new File("src/test/resources/1.jpg");
   public ContactData cd = new ContactData()
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
           .withLastName("LastName")
           .withNickname("testing")
+          .withPhoto(photo)
           .withAddress("Testing")
           .withHomePhone("+73333333333")
           .withMobile("+79999999999")

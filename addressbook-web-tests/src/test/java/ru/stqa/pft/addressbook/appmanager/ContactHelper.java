@@ -8,6 +8,7 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.File;
 import java.util.List;
 
 import static ru.stqa.pft.addressbook.tests.TestBase.app;
@@ -37,6 +38,7 @@ public class ContactHelper extends HelperBase {
     type(By.name("firstname"), cd.getFirstName());
     type(By.name("lastname"), cd.getLastName());
     type(By.name("nickname"), cd.getNickname());
+    attach(By.name("photo"), cd.getPhoto());
     type(By.name("address"), cd.getAddress());
     type(By.name("mobile"), cd.getMobile());
     type(By.name("email"), cd.getEmail());
