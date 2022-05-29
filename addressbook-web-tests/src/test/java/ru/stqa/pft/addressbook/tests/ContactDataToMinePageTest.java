@@ -19,7 +19,7 @@ public class ContactDataToMinePageTest extends TestBase{
       app.goTo().mainPage();
     }
   }
-
+//
   @Test
   public void testContactPhones(){
     ContactData contact = app.contact().all().iterator().next();
