@@ -11,4 +11,5 @@ dependencies {
     implementation 'org.lable.rfc3881.auditlogger.adapter:slf4j:2.3'
     implementation 'org.seleniumhq.selenium:selenium-java:4.2.0'
     implementation 'org.hamcrest:hamcrest:2.2'
+    implementation 'com.beust:jcommander:1.48'
 }

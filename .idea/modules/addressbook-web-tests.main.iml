@@ -12,9 +12,9 @@
     <orderEntry type="library" name="Gradle: org.lable.rfc3881.auditlogger.adapter:slf4j:2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.seleniumhq.selenium:selenium-java:4.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest:2.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.32" level="project" />
-    <orderEntry type="library" name="Gradle: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.13.3" level="project" />
     <orderEntry type="library" name="Gradle: org.lable.rfc3881.auditlogger:api:2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-core:2.13.3" level="project" />
