@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ContactsDataGenerator {
@@ -63,9 +64,11 @@ public class ContactsDataGenerator {
   private List<ContactData> generateContacts(int count) {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i=0; i<count;i++){
-      int d = 0;
-      if (i<30){
+      int d;
+      if (i<31){
         d=i;
+      } else {
+        d = i - (31 * (i / 31));
       }
       contacts.add(new ContactData()
               .withFirstName(String.format("FirstName_%s", i+1))

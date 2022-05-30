@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
-  public static final ApplicationManager app = new ApplicationManager(BrowserType.FIREFOX);
+  public static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
   @BeforeSuite//(alwaysRun = true)
   public void setUp() {
