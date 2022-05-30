@@ -2,7 +2,7 @@
   <configuration default="false" name="GroupDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.generators.GroupDataGenerator" />
     <module name="addressbook-web-tests.test" />
-    <option name="PROGRAM_PARAMETERS" value="-c 10 -f src/test/resources/groups.csv" />
+    <option name="PROGRAM_PARAMETERS" value="-c 3 -f src/test/resources/groups.xml -d xml" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/addressbook-web-tests" />
     <extension name="coverage">
       <pattern>

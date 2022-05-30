@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
@@ -10,6 +12,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,28 +21,17 @@ public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContacts() throws IOException {
-    List<Object[]> list = new ArrayList<>();
-    BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.csv"));
+    BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.xml"));
+    String xml = "";
     String line = reader.readLine();
     while (line !=null){
-      String[] split = line.split(";");
-      list.add(new Object[]{new ContactData()
-              .withFirstName(split[0])
-              .withLastName(split[1])
-              .withNickname(split[2])
-              .withAddress(split[3])
-              .withHomePhone(split[4])
-              .withMobile(split[5])
-              .withWorkPhone(split[6])
-              .withEmail(split[7])
-              .withBirthdayDay(split[8])
-              .withBirthdayMonth(split[9])
-              .withBirthdayYear(split[10])
-              .withAddress2(split[11])
-      });
+      xml += line;
       line = reader.readLine();
     }
-    return list.iterator();
+    XStream xStream = new XStream();//xml
+    xStream.processAnnotations(ContactData.class);
+    List<ContactData> contacts = (List<ContactData>) xStream.fromXML(xml);//xml
+    return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
   }
 
   @Test(dataProvider = "validContacts")

@@ -2,7 +2,7 @@
   <configuration default="false" name="ContactsDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.generators.ContactsDataGenerator" />
     <module name="addressbook-web-tests.test" />
-    <option name="PROGRAM_PARAMETERS" value="-c 100 -f src/test/resources/contacts.csv" />
+    <option name="PROGRAM_PARAMETERS" value="-c 2 -f src/test/resources/contacts.xml -d xml" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/addressbook-web-tests" />
     <extension name="coverage">
       <pattern>
