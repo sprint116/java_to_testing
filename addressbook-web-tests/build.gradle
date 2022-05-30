@@ -13,4 +13,5 @@ dependencies {
     implementation 'org.hamcrest:hamcrest:2.2'
     implementation 'com.beust:jcommander:1.48'
     implementation 'com.thoughtworks.xstream:xstream:1.4.19'
+    implementation 'com.google.code.gson:gson:2.9.0'
 }
