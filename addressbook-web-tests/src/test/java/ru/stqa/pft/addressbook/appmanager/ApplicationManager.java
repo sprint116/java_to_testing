@@ -24,7 +24,6 @@ public class ApplicationManager {
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
           .withLastName("LastName")
           .withNickname("testing")
-
           .withAddress("Testing")
           .withHomePhone("+73333333333")
           .withMobile("+79999999999")

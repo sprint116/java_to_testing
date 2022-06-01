@@ -42,10 +42,13 @@ public class GroupDataGenerator {
     List<GroupData> groups = generateGroups(count);
     if (format.equals("csv")) {
       saveAsCsv(groups, new File(file));
+      System.out.println("save As Csv");
     } else if (format.equals("xml")){
       saveAsXml(groups, new File(file));
+      System.out.println("save As Xml");
     } else if (format.equals("json")){
       saveAsJson(groups, new File(file));
+      System.out.println("save As Json");
     } else {
       System.out.println("Unrecognized format "+ format);
     }
@@ -63,7 +66,7 @@ public class GroupDataGenerator {
     System.out.println(new File(".").getAbsolutePath());
     Writer writer = new FileWriter(file);
     for(GroupData group : groups){
-      writer.write(String.format("%s;%s;%s\n", group.getName(),group.getHeader(), group.getFooter()));
+      writer.write(String.format("%s;%s;%s\n", group.getName(),group.getHeader(),group.getFooter()));
     }
     writer.close();
   }
@@ -83,7 +86,7 @@ public class GroupDataGenerator {
       groups.add(new GroupData()
               .withName(String.format("TestName_%s", i+1))
               .withHeader(String.format("TestHeader_%s", i+1))
-              .withFooter(String.format("TestFooter_%s", i+1))
+              //.withFooter(String.format("TestFooter_%s", i+1))
       );
     }
     return groups;
