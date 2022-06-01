@@ -52,7 +52,7 @@ public class ContactsDataGenerator {
   }
 
   private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
     String json = gson.toJson(contacts);
     Writer writer = new FileWriter(file);
     writer.write(json);
@@ -93,11 +93,11 @@ public class ContactsDataGenerator {
   private List<ContactData> generateContacts(int count) {
     List<ContactData> contacts = new ArrayList<>();
     for (int i=0; i<count;i++){
-      int d;
+      int day;
       if (i<31){
-        d=i;
+        day=i;
       } else {
-        d = i - (31 * (i / 31));
+        day = i - (31 * (i / 31));
       }
       contacts.add(new ContactData()
               .withFirstName(String.format("FirstName_%s", i+1))
@@ -108,7 +108,7 @@ public class ContactsDataGenerator {
               .withMobile("+79999999999")
               .withWorkPhone("+78888888888")
               .withEmail(String.format("Test%s@mail.ru", i+1))
-              .withBirthdayDay(String.format("%s", d+1))
+              .withBirthdayDay(String.format("%s", day+1))
               .withBirthdayMonth("January")
               .withBirthdayYear("1990")
               .withAddress2(String.format("TestAddress2_%s", i+1))

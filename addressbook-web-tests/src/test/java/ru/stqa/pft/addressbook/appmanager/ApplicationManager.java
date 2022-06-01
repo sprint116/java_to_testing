@@ -17,15 +17,14 @@ public class ApplicationManager {
   private ContactHelper contactHelper;
   public GroupHelper groupHelper;
   private SessionHelper sessionHelper;
-  public GroupData gd = new GroupData().withName("TestName " + (int) (Math.random() * 100) + "/");
+  public GroupData gd = new GroupData()
+          .withName("TestName " + (int) (Math.random() * 100) + "/");
 
-
-  public File photo = new File("src/test/resources/1.jpg");
   public ContactData cd = new ContactData()
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
           .withLastName("LastName")
           .withNickname("testing")
-          .withPhoto(photo)
+
           .withAddress("Testing")
           .withHomePhone("+73333333333")
           .withMobile("+79999999999")
