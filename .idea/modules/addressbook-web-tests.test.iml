@@ -17,6 +17,7 @@
     <orderEntry type="library" name="Gradle: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" name="Gradle: com.thoughtworks.xstream:xstream:1.4.19" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:8.0.29" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.32" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.13.3" level="project" />
@@ -37,6 +38,7 @@
     <orderEntry type="library" name="Gradle: org.seleniumhq.selenium:selenium-remote-driver:4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: org.seleniumhq.selenium:selenium-api:4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: io.github.x-stream:mxparser:1.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.19.4" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.3" level="project" />
     <orderEntry type="library" name="Gradle: org.lable.rfc3881.auditlogger.definitions:rfc3881:2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.lable.codesystem:codereference:1.5" level="project" />
