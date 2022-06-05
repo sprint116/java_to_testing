@@ -11,7 +11,7 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
-public class HbConnectionTest {
+public class HbConnectionTestForGroups {
   private SessionFactory sessionFactory;
   @BeforeClass
   protected void setUp() throws Exception {

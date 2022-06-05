@@ -27,13 +27,13 @@ public class TestBase {
   public void tearDown() {
     app.stop();
   }
+  public void logTestStop(Method m){
+    logger.info("Stop test " + m.getName());
+  }
 
   @BeforeMethod
   public void logTestStart(Method m, Object[] p){
     logger.info("Start test " + m.getName() + "with parameters" + Arrays.asList(p));
   }
-  @AfterSuite//(alwaysRun = true)
-  public void logTestStop(Method m){
-    logger.info("Stop test " + m.getName());
-  }
+
 }

@@ -2,7 +2,7 @@
     <timestamp key="bySecond" datePattern="dd-MM-yyyy_HH.mm.ss"/>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>test-${bySecond}.log</file>
+        <file>logs/test-${bySecond}.log</file>
         <append>true</append>
         <!-- set immediateFlush to false for much higher logging throughput -->
         <immediateFlush>true</immediateFlush>
@@ -14,6 +14,9 @@
     </appender>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
@@ -22,7 +25,10 @@
     </appender>
 
     <root level="debug">
-        <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
+    </root>
+
+    <root level="error">
+        <appender-ref ref="STDOUT" />
     </root>
 </configuration>
