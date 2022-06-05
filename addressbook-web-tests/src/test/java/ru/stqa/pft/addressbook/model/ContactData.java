@@ -34,6 +34,19 @@ public class ContactData {
   @Expose @Transient  private String allEmails;
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(nickname, that.nickname) && Objects.equals(photo, that.photo) && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone) && Objects.equals(mobile, that.mobile) && Objects.equals(workPhone, that.workPhone) && Objects.equals(email, that.email) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3) && Objects.equals(birthdayDay, that.birthdayDay) && Objects.equals(birthdayMonth, that.birthdayMonth) && Objects.equals(birthdayYear, that.birthdayYear) && Objects.equals(address2, that.address2);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, firstName, lastName, nickname, photo, address, homePhone, mobile, workPhone, email, email2, email3, birthdayDay, birthdayMonth, birthdayYear, address2);
+  }
+
+  @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
@@ -207,16 +220,4 @@ public class ContactData {
   }
 
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(firstName, that.firstName);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, firstName);
-  }
 }

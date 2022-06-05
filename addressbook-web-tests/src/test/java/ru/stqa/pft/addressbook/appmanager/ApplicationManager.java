@@ -23,7 +23,9 @@ public class ApplicationManager {
   public GroupHelper groupHelper;
   private SessionHelper sessionHelper;
   public GroupData gd = new GroupData()
-          .withName("TestName " + (int) (Math.random() * 100) + "/");
+          .withName("TestName " + (int) (Math.random() * 100) + "/")
+          .withFooter("TestFooter " + (int) (Math.random() * 100) + "/")
+          .withHeader("TestHeader " + (int) (Math.random() * 100) + "/");
 
   public ContactData cd = new ContactData()
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
@@ -34,11 +36,16 @@ public class ApplicationManager {
           .withMobile("+79999999999")
           .withWorkPhone("+74444444444")
           .withEmail("test@test.test")
+          .withEmail2("test@test.test")
+          .withEmail3("test@test.test")
           .withBirthdayDay("17")
           .withBirthdayMonth("January")
           .withBirthdayYear("1990")
-          .withAddress2("TestingAddress");
+          .withAddress2("TestingAddress")
+          .withAddress2("Testing2");
+
   private final String browser;
+  private DbHelper dbHelper;
 
   public ApplicationManager(String browser){
     this.browser = browser;
@@ -48,6 +55,8 @@ public class ApplicationManager {
   public void init()  throws IOException {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+
+    dbHelper = new DbHelper();
 
     if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
@@ -82,5 +91,9 @@ public class ApplicationManager {
 
   public NavigationHelper goTo() {
     return navigationHelper;
+  }
+
+  public DbHelper db(){
+    return dbHelper;
   }
 }

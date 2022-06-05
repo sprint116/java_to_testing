@@ -15,7 +15,7 @@ public class ContactModificationTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
     app.goTo().mainPage();
-    if (app.contact().all().size() == 0) {
+    if (app.db().contacts().size() == 0){
       app.contact().create(app.cd);
       app.goTo().mainPage();
     }
@@ -23,12 +23,12 @@ public class ContactModificationTests extends TestBase {
 
   @Test//(enabled = false)
   public void testContactModification() {
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     ContactData modifyContact = before.iterator().next();
     File photo = new File("src/test/resources/11.jpg");
     app.contact().modify(app.cd.withId(modifyContact.getId()).withPhoto(photo));
     assertThat(app.contact().count(), equalTo(before.size()));
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
     assertThat(after, equalTo(before.without(modifyContact).withAdded(app.cd)));
   }
 }
