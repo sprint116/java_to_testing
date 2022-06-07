@@ -27,11 +27,13 @@ public class ApplicationManager {
           .withFooter("TestFooter " + (int) (Math.random() * 100) + "/")
           .withHeader("TestHeader " + (int) (Math.random() * 100) + "/");
 
+  File photo = new File("src/test/resources/11.jpg");
   public ContactData cd = new ContactData()
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
           .withLastName("LastName")
           .withNickname("testing")
           .withAddress("Testing")
+          .withPhoto(photo)
           .withHomePhone("+73333333333")
           .withMobile("+79999999999")
           .withWorkPhone("+74444444444")
