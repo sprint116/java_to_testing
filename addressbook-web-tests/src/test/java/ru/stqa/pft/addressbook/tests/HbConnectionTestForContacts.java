@@ -38,6 +38,7 @@ public class HbConnectionTestForContacts {
     List<ContactData> result = session.createQuery( "from ContactData where DATE_FORMAT( 'deprecated' , '%d %M %Y' ) is null").list();
     for (ContactData contact : result) {
       System.out.println(contact);
+      System.out.println(contact.getGroups());
     }
     session.getTransaction().commit();
     session.close();

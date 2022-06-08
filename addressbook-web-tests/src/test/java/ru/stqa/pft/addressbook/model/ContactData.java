@@ -5,8 +5,11 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import jakarta.persistence.*;
 
+
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
@@ -30,6 +33,11 @@ public class ContactData {
   @Expose private String address2 = "";
   @Expose @Transient  private String allPhones = "";
   @Expose @Transient  private String allEmails = "";
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"),inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<>();
 
   @Override
   public boolean equals(Object o) {
@@ -139,6 +147,10 @@ public class ContactData {
     return allEmails;
   }
 
+  public Groups getGroups() {
+    return new Groups(groups);
+  }
+
   /*Setters*/
   public ContactData withId(int id) {
     this.id = id;
@@ -231,4 +243,8 @@ public class ContactData {
   }
 
 
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
 }
