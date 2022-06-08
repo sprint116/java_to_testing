@@ -1,8 +1,9 @@
 <configuration>
     <timestamp key="bySecond" datePattern="dd-MM-yyyy_HH.mm.ss"/>
+    <timestamp key="byDay" datePattern="dd.MM.yyyy"/>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>src/test/resources/logs/test-${bySecond}.log</file>
+        <file>src/test/resources/logs/${byDay}/test-${bySecond}.log</file>
         <append>true</append>
         <!-- set immediateFlush to false for much higher logging throughput -->
         <immediateFlush>true</immediateFlush>

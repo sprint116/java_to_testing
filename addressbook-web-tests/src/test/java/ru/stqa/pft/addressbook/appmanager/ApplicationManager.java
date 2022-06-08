@@ -25,19 +25,19 @@ public class ApplicationManager {
           .withFooter("TestFooter " + (int) (Math.random() * 100) + "/")
           .withHeader("TestHeader " + (int) (Math.random() * 100) + "/");
 
-  File photo = new File("src/test/resources/11.jpg");
+  //File photo = new File("src/test/resources/11.jpg");
   public ContactData cd = new ContactData()
           .withFirstName("TestName " + (int) (Math.random() * 100) + "/")
           .withLastName("LastName")
           .withNickname("testing")
           .withAddress("Testing")
-          .withPhoto(photo)
+          //.withPhoto(photo)
           .withHomePhone("+73333333333")
           .withMobile("+79999999999")
           .withWorkPhone("+74444444444")
           .withEmail("test@test.test")
-          .withEmail2("test@test.test")
-          .withEmail3("test@test.test")
+          .withEmail2("test2@test.test")
+          .withEmail3("test3@test.test")
           .withBirthdayDay("17")
           .withBirthdayMonth("January")
           .withBirthdayYear("1990")

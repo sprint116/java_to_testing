@@ -37,10 +37,14 @@ public class ContactHelper extends HelperBase {
     type(By.name("firstname"), cd.getFirstName());
     type(By.name("lastname"), cd.getLastName());
     type(By.name("nickname"), cd.getNickname());
-    attach(By.name("photo"), cd.getPhoto());
+    //attach(By.name("photo"), cd.getPhoto());
+    type(By.name("home"), cd.getHomePhone());
+    type(By.name("work"), cd.getWorkPhone());
     type(By.name("address"), cd.getAddress());
     type(By.name("mobile"), cd.getMobile());
     type(By.name("email"), cd.getEmail());
+    type(By.name("email2"), cd.getEmail2());
+    type(By.name("email3"), cd.getEmail3());
     select(By.name("bday"), cd.getBirthdayDay());
     select(By.name("bmonth"), cd.getBirthdayMonth());
     type(By.name("byear"), cd.getBirthdayYear());

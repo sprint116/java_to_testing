@@ -16,7 +16,7 @@ public class ContactData {
   @Expose private String firstName;
   @Expose private String lastName;
   @Expose private String nickname;
-  @XStreamOmitField @Column(name = "photo") private String photo;
+  @XStreamOmitField @Transient private String photo;
   @Expose private String address;
   @Expose @Column(name = "home") private String homePhone;
   @Expose private String mobile;
@@ -47,9 +47,22 @@ public class ContactData {
   @Override
   public String toString() {
     return "ContactData{" +
-            "id=" + id +
+            /*"id=" + id +
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
+            ", nickname='" + nickname + '\'' +*/
+            ", photo='" + photo + '\'' +
+            /*", address='" + address + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", mobile='" + mobile + '\'' +
+            ", workPhone='" + workPhone + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", birthdayDay='" + birthdayDay + '\'' +
+            ", birthdayMonth='" + birthdayMonth + '\'' +
+            ", birthdayYear='" + birthdayYear + '\'' +
+            ", address2='" + address2 + '\'' +*/
             '}';
   }
 
