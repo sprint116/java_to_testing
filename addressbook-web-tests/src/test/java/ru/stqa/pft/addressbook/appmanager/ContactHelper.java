@@ -64,6 +64,10 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.cssSelector("input[id='" + id + "']")).click();
   }
 
+  public void addToGroup(){
+    click(By.xpath("//input[@name='add']"));
+  }
+
   public void buttonDelContact() {
     click(By.xpath("//input[@value='Delete']"));
   }
@@ -101,6 +105,13 @@ public class ContactHelper extends HelperBase {
     buttonDelContact();
     deletionConfirmationContact();
     contsctCache = null;
+    app.goTo().mainPage();
+  }
+
+  public void addToGroup(ContactData contact){
+    app.goTo().mainPage();
+    selectContactById(contact.getId());
+    addToGroup();
     app.goTo().mainPage();
   }
 
