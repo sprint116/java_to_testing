@@ -47,12 +47,12 @@ public class ContactData {
   @Override
   public String toString() {
     return "ContactData{" +
-            /*"id=" + id +
+            "id=" + id +
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
-            ", nickname='" + nickname + '\'' +*/
+            ", nickname='" + nickname + '\'' +
             ", photo='" + photo + '\'' +
-            /*", address='" + address + '\'' +
+            ", address='" + address + '\'' +
             ", homePhone='" + homePhone + '\'' +
             ", mobile='" + mobile + '\'' +
             ", workPhone='" + workPhone + '\'' +
@@ -62,7 +62,7 @@ public class ContactData {
             ", birthdayDay='" + birthdayDay + '\'' +
             ", birthdayMonth='" + birthdayMonth + '\'' +
             ", birthdayYear='" + birthdayYear + '\'' +
-            ", address2='" + address2 + '\'' +*/
+            ", address2='" + address2 + '\'' +
             '}';
   }
 

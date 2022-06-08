@@ -7,10 +7,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -90,7 +88,7 @@ public class ContactCreationTests extends TestBase {
     Contacts after = app.db().contacts();
     assertThat(after, equalTo(before.withAdded(
             contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-
+    verifyContactListInUi();
   }
 
   @Test(enabled = false)
