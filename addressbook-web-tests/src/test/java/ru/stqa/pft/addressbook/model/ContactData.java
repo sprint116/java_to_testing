@@ -13,23 +13,23 @@ import java.util.Objects;
 @Table(name = "addressbook")
 public class ContactData {
   @XStreamOmitField @Id private int id = Integer.MAX_VALUE;
-  @Expose private String firstName;
-  @Expose private String lastName;
-  @Expose private String nickname;
-  @XStreamOmitField @Transient private String photo;
-  @Expose private String address;
-  @Expose @Column(name = "home") private String homePhone;
-  @Expose private String mobile;
-  @Expose @Column(name = "work") private String workPhone;
-  @Expose private String email;
-  @Expose private String email2;
-  @Expose private String email3;
-  @Expose @Column(name = "bday", columnDefinition="tinyint") private String birthdayDay;
-  @Expose @Column(name = "bmonth") private String birthdayMonth;
-  @Expose @Column(name = "byear") private String birthdayYear;
-  @Expose private String address2;
-  @Expose @Transient  private String allPhones;
-  @Expose @Transient  private String allEmails;
+  @Expose private String firstName = "";
+  @Expose private String lastName = "";
+  @Expose private String nickname = "";
+  @XStreamOmitField @Transient private String photo = "";
+  @Expose private String address = "";
+  @Expose @Column(name = "home") private String homePhone = "";
+  @Expose private String mobile = "";
+  @Expose @Column(name = "work") private String workPhone = "";
+  @Expose private String email = "";
+  @Expose private String email2 = "";
+  @Expose private String email3 = "";
+  @Expose @Column(name = "bday", columnDefinition="tinyint") private String birthdayDay = "";
+  @Expose @Column(name = "bmonth") private String birthdayMonth = "";
+  @Expose @Column(name = "byear") private String birthdayYear = "";
+  @Expose private String address2 = "";
+  @Expose @Transient  private String allPhones = "";
+  @Expose @Transient  private String allEmails = "";
 
   @Override
   public boolean equals(Object o) {
