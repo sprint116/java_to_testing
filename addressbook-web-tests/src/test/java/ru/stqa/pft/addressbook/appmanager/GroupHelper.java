@@ -30,6 +30,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void initGroupCreation() {
+    app.goTo().groupPage();
     click(By.name("new"));
   }
 

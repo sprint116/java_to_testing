@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -22,11 +23,24 @@ public class ContactRemFromGroupTest extends TestBase{
   public void testContactRemFromGroup() {
   ContactData selectContact = app.db().contacts().iterator().next();
 
+
     if(selectContact.getGroups().size() == 0){
       System.out.println("Not found groups");
-      //Тут добавить сценарий добавления контакта в группу
+      GroupData group = app.db().groups().iterator().next();
+      app.contact().addToGroup(selectContact,group.getName());
   }
-    Set<String> groupName = selectContact.getGroups().stream().map((g) -> g.getName()).collect(Collectors.toSet());
-  System.out.println(groupName);
+  GroupData selectGroup = selectContact.getGroups().iterator().next();
+  app.goTo().mainPage();
+  app.contact().selectGroup(selectGroup.getName());
+  app.contact().selectContactById(selectContact.getId());
+  app.contact().removeFromGroup();
+  app.contact().returnToGroupPage(selectGroup.getName());
+
+  //app.goTo().mainPage();
+
+
+
   }
+
+
 }
