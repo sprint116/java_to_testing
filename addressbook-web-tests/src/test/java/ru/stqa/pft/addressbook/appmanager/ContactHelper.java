@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -62,7 +61,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContactById(int id) {
-    wd.findElement(By.cssSelector("input[id='" + id + "']")).click();
+    wd.findElement(By.cssSelector(String.format("input[id='%s']",id))).click();
   }
 
   public void addToGroup(String value){
@@ -72,6 +71,10 @@ public class ContactHelper extends HelperBase {
 
   public void selectGroup(String value){
     select(By.name("group"), value);
+  }
+
+  public void selectAllGroup(){
+    select(By.name("group"), "[all]");
   }
 
   public void removeFromGroup(){
@@ -99,34 +102,49 @@ public class ContactHelper extends HelperBase {
   }
 
   public void create(ContactData contact) {
+    app.goTo().mainPage();
+    selectAllGroup();
     initContactsCreation();
     fillContactsForm(contact, true);
     submitContactsCreation();
-    contsctCache = null;
+    contactCache = null;
     app.goTo().mainPage();
   }
 
   public void modify(ContactData contact) {
+    app.goTo().mainPage();
+    selectAllGroup();
     changeModificationContactById(contact.getId());
     fillContactsForm(contact, false);
     submitContactModification();
-    contsctCache = null;
+    contactCache = null;
     app.goTo().mainPage();
   }
 
   public void delete(ContactData contact) {
+    app.goTo().mainPage();
+    selectAllGroup();
     selectContactById(contact.getId());
     buttonDelContact();
     deletionConfirmationContact();
-    contsctCache = null;
+    contactCache = null;
     app.goTo().mainPage();
   }
 
   public void addToGroup(ContactData contact, String group){
     app.goTo().mainPage();
+    selectAllGroup();
     selectContactById(contact.getId());
     addToGroup(group);
     returnToGroupPage(group);
+  }
+
+  public void remFromGroup(String name, int id){
+    app.goTo().mainPage();
+    selectGroup(name);
+    selectContactById(id);
+    removeFromGroup();
+    returnToGroupPage(name);
   }
 
   /*public boolean isThereAContact() {
@@ -137,13 +155,13 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  private Contacts contsctCache = null;
+  private Contacts contactCache = null;
 
   public Contacts all() {
-    if (contsctCache != null) {
-      return new Contacts(contsctCache);
+    if (contactCache != null) {
+      return new Contacts(contactCache);
     }
-    contsctCache = new Contacts();
+    contactCache = new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
@@ -153,7 +171,7 @@ public class ContactHelper extends HelperBase {
       String allEmails = element.findElement(By.xpath("td[5]")).getText();
       String allPhones = element.findElement(By.xpath("td[6]")).getText();
 
-      contsctCache.add(new ContactData()
+      contactCache.add(new ContactData()
               .withId(id)
               .withFirstName(firstName)
               .withLastName(lastName)
@@ -161,7 +179,7 @@ public class ContactHelper extends HelperBase {
               .withAllPhones(allPhones)
               .withAllEmails(allEmails));
     }
-    return new Contacts(contsctCache);
+    return new Contacts(contactCache);
   }
 
   public ContactData infoFromEditForm(ContactData contact){

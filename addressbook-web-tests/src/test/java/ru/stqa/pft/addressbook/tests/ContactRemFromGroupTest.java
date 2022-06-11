@@ -4,9 +4,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactRemFromGroupTest extends TestBase{
   @BeforeMethod
@@ -22,25 +23,20 @@ public class ContactRemFromGroupTest extends TestBase{
 @Test
   public void testContactRemFromGroup() {
   ContactData selectContact = app.db().contacts().iterator().next();
+  GroupData group;
 
-
-    if(selectContact.getGroups().size() == 0){
-      System.out.println("Not found groups");
-      GroupData group = app.db().groups().iterator().next();
-      app.contact().addToGroup(selectContact,group.getName());
-  }
-  GroupData selectGroup = selectContact.getGroups().iterator().next();
-  app.goTo().mainPage();
-  app.contact().selectGroup(selectGroup.getName());
-  app.contact().selectContactById(selectContact.getId());
-  app.contact().removeFromGroup();
-  app.contact().returnToGroupPage(selectGroup.getName());
-
-  //app.goTo().mainPage();
-
-
-
+  if (selectContact.getGroups().size() == 0) {
+    group = app.db().groups().iterator().next();
+    app.contact().addToGroup(selectContact,group.getName());
+  }else {
+    group = selectContact.getGroups().iterator().next();
   }
 
-
+  selectContact = app.db().contacts().iterator().next();
+  Groups before = selectContact.getGroups();
+  app.contact().remFromGroup(group.getName(), selectContact.getId());
+  selectContact = app.db().contacts().iterator().next();
+  Groups after = selectContact.getGroups();
+  assertThat(after, equalTo(before.without(before.iterator().next())));
+  }
 }

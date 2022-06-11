@@ -26,7 +26,7 @@ public class DbHelper {
   public Groups groups(){
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List<GroupData> result = session.createQuery( "from GroupData").list();
+    List<GroupData> result = session.createQuery( "FROM GroupData").list();
     session.getTransaction().commit();
     session.close();
     return new Groups(result);
@@ -35,9 +35,18 @@ public class DbHelper {
   public Contacts contacts(){
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List<ContactData> result = session.createQuery( "from ContactData where DATE_FORMAT( 'deprecated' , '%d %M %Y' ) is null").list();
+    List<ContactData> result = session.createQuery( "FROM ContactData WHERE DATE_FORMAT( 'deprecated' , '%d %M %Y' ) is null").list();
     session.getTransaction().commit();
     session.close();
     return new Contacts(result);
   }
+
+  /*public Contacts contactsInGroups(int groupId){
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    List<ContactData> result = session.createQuery(String.format("FROM address_in_groups WHERE DATE_FORMAT( 'deprecated' , '%d %M %Y' ) is null AND group_id  = %s", groupId)).list();
+    session.getTransaction().commit();
+    session.close();
+    return new Contacts(result);
+  }*/
 }
