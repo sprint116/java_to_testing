@@ -9,10 +9,10 @@ import ru.stqa.pft.addressbook.model.Groups;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactRemFromGroupTest extends TestBase{
+public class ContactRemFromGroupTest extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
-    if (app.db().contacts().size() == 0){
+    if (app.db().contacts().size() == 0) {
       app.contact().create(app.cd);
       app.goTo().mainPage();
     }
@@ -20,23 +20,24 @@ public class ContactRemFromGroupTest extends TestBase{
       app.group().create(app.gd);
     }
   }
-@Test
+
+  @Test
   public void testContactRemFromGroup() {
-  ContactData selectContact = app.db().contacts().iterator().next();
-  GroupData group;
+    ContactData selectContact = app.db().contacts().iterator().next();
+    GroupData group;
 
-  if (selectContact.getGroups().size() == 0) {
-    group = app.db().groups().iterator().next();
-    app.contact().addToGroup(selectContact,group.getName());
-  }else {
-    group = selectContact.getGroups().iterator().next();
-  }
+    if (selectContact.getGroups().size() == 0) {
+      group = app.db().groups().iterator().next();
+      app.contact().addToGroup(selectContact, group.getName());
+    } else {
+      group = selectContact.getGroups().iterator().next();
+    }
 
-  selectContact = app.db().contacts().iterator().next();
-  Groups before = selectContact.getGroups();
-  app.contact().remFromGroup(group.getName(), selectContact.getId());
-  selectContact = app.db().contacts().iterator().next();
-  Groups after = selectContact.getGroups();
-  assertThat(after, equalTo(before.without(before.iterator().next())));
+    selectContact = app.db().contacts().iterator().next();
+    Groups before = selectContact.getGroups();
+    app.contact().remFromGroup(group.getName(), selectContact.getId());
+    selectContact = app.db().contacts().iterator().next();
+    Groups after = selectContact.getGroups();
+    assertThat(after, equalTo(before.without(before.iterator().next())));
   }
 }

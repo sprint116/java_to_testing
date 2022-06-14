@@ -9,10 +9,10 @@ import ru.stqa.pft.addressbook.model.Groups;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactAddToGroupTest extends TestBase{
+public class ContactAddToGroupTest extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
-    if (app.db().contacts().size() == 0){
+    if (app.db().contacts().size() == 0) {
       app.contact().create(app.cd);
       app.goTo().mainPage();
     }
@@ -26,14 +26,14 @@ public class ContactAddToGroupTest extends TestBase{
     ContactData selectContact = app.db().contacts().iterator().next();
     GroupData group = app.db().groups().iterator().next();
 
-      if (selectContact.getGroups().size() != 0) {
-        group = selectContact.getGroups().iterator().next();
-        app.contact().remFromGroup(group.getName(), selectContact.getId());
-      }
+    if (selectContact.getGroups().size() != 0) {
+      group = selectContact.getGroups().iterator().next();
+      app.contact().remFromGroup(group.getName(), selectContact.getId());
+    }
 
     selectContact = app.db().contacts().iterator().next();
     Groups before = selectContact.getGroups();
-    app.contact().addToGroup(selectContact,group.getName());
+    app.contact().addToGroup(selectContact, group.getName());
     selectContact = app.db().contacts().iterator().next();
     Groups after = selectContact.getGroups();
     assertThat(after, equalTo(before.withAdded(selectContact.getGroups().iterator().next())));

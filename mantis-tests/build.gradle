@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+test {
+    useTestNG()
+}
+dependencies {
+    implementation 'org.testng:testng:7.5'
+    implementation 'org.lable.rfc3881.auditlogger.adapter:slf4j:2.3'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.2.1'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUI')) {
+        systemProperty 'verifyUI', "${verifyUI}"
+    }
+}
