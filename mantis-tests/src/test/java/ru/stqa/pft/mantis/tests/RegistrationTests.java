@@ -1,7 +1,5 @@
 package ru.stqa.pft.mantis.tests;
 
-import com.sun.source.tree.AssertTree;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,7 +20,7 @@ public class RegistrationTests extends TestBase{
   }
 
   @Test
-  public void testRegistration() throws MessagingException, IOException {
+  public void testRegistration1() throws MessagingException, IOException {
     long now = System.currentTimeMillis();
     String username = "user"+now;
     String email = String.format("user%s@localhost.localdomain", now);
@@ -32,6 +30,21 @@ public class RegistrationTests extends TestBase{
     String confirmationLink = findConfirmationLink(mailMessages, email);
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(username, password));
+  }
+
+  @Test(enabled = false)
+  public void testRegistration2() throws MessagingException, IOException {
+    long now = System.currentTimeMillis();
+    String user = String.format("user%s", now);
+    String password = "password";
+    String email = String.format("user%s@localhost.localdomain", now);
+    app.james().createUser(user, password);
+    app.registration().start(user, email);
+    //List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+    List<MailMessage> mailMessages = app.james().waitForMail(user, password, 60000);
+    String confirmationLink = findConfirmationLink(mailMessages, email);
+    app.registration().finish(confirmationLink, password);
+    assertTrue(app.newSession().login(user, password));
   }
 
   private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
