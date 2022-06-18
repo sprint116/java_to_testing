@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ApplicationManager {
-  private final Properties properties;
+  private Properties properties;
   private WebDriver wd;
 
   private String browser;
@@ -25,7 +25,6 @@ public class ApplicationManager {
   public ApplicationManager(String browser){
     this.browser = browser;
     properties = new Properties();
-    dbHelper = new DbHelper();
   }
 
   public void init()  throws IOException {
@@ -55,7 +54,7 @@ public class ApplicationManager {
     return registrationHelper;
   }
 
-  public AdminHelper adminHelper() {
+  public AdminHelper admin() {
     if (adminHelper == null) {
       adminHelper = new AdminHelper(this);
     }
@@ -85,7 +84,6 @@ public class ApplicationManager {
       } else if (browser.equals(BrowserType.IE)) {
         wd = new InternetExplorerDriver();
       }
-
       //wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
       wd.get(properties.getProperty("web.baseUrl"));
     }
@@ -107,6 +105,9 @@ public class ApplicationManager {
   }
 
   public DbHelper db(){
+    if (dbHelper == null){
+      dbHelper = new DbHelper(this);
+    }
     return dbHelper;
   }
 }

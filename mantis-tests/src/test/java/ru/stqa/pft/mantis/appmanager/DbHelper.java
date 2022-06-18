@@ -11,9 +11,11 @@ import ru.stqa.pft.mantis.model.Users;
 import java.util.List;
 
 public class DbHelper {
+  private ApplicationManager app;
   private final SessionFactory sessionFactory;
 
-  public DbHelper() {
+  public DbHelper(ApplicationManager app) {
+    this.app = app;
     final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
             .configure()
             .build();
