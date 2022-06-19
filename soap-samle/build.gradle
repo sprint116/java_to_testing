@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.6.0'
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.yupzip:wsdl2java:2.3.0"
+    }
+}
+
+apply plugin: "com.yupzip.wsdl2java"
+
+wsdl2java {
+    generatedWsdlDir  = file("D:/GitHub/java_to_testing/soap-samle/src/main/java")
+    wsdlDir = file("D:/GitHub/java_to_testing/soap-samle/src/main/resources/") // define to support incremental build
+    wsdlsToGenerate = [   //  2d-array of wsdls and cxf-parameters
+                          ['D:/GitHub/java_to_testing/soap-samle/src/main/resources/geoservice.wsdl.xml']
+    ]
+}

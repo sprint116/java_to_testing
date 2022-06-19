@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.lable.rfc3881.auditlogger.adapter:slf4j:2.3">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger.adapter/slf4j/2.3/658d06f0f71135ed83e848f587f955c675c0d81b/slf4j-2.3.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger.adapter/slf4j/2.3/658d06f0f71135ed83e848f587f955c675c0d81b/slf4j-2.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger.adapter/slf4j/2.3/5ecba2093f976ebc6b3f3920deaab2fd8b38d412/slf4j-2.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger.adapter/slf4j/2.3/5ecba2093f976ebc6b3f3920deaab2fd8b38d412/slf4j-2.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
