@@ -17,7 +17,8 @@ public class AdminHelper extends HelperBase {
   }
 
   public void goToUserManagePage(int id){
-    wd.findElement(By.cssSelector("a[href='/mantisbt-2.25.4/manage_user_page.php']")).click();
+    wd.get( app.getProperty("web.baseUrl") + "/manage_overview_page.php");
+    wd.findElement(By.cssSelector(String.format("a[href='/%s/manage_user_page.php']", app.getProperty("web.version")))).click();
     wd.findElement(By.cssSelector(String.format("a[href='manage_user_edit_page.php?user_id=%s']", id))).click();
   }
 
