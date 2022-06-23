@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.lable.rfc3881.auditlogger:api:2.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger/api/2.3/63d736c08f5d14b760a240e36c79b22d4bed047/api-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger/api/2.3/63d736c08f5d14b760a240e36c79b22d4bed047/api-2.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger/api/2.3/525e3ba9d4fd56b8df32c1608fd9aa8389468890/api-2.3-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.rfc3881.auditlogger/api/2.3/525e3ba9d4fd56b8df32c1608fd9aa8389468890/api-2.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.lable.codesystem:codereference:1.5">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.codesystem/codereference/1.5/a8bbd6dfe4f3d3a6fbae40b79410b75166f505e6/codereference-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.codesystem/codereference/1.5/a8bbd6dfe4f3d3a6fbae40b79410b75166f505e6/codereference-1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lable.codesystem/codereference/1.5/d3dfd500087cb0a30c52069a87e363546aeec599/codereference-1.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.lable.codesystem/codereference/1.5/d3dfd500087cb0a30c52069a87e363546aeec599/codereference-1.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
