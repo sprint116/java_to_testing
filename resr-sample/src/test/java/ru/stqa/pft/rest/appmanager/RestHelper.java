@@ -1,8 +1,6 @@
 package ru.stqa.pft.rest.appmanager;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
@@ -32,11 +30,15 @@ public class RestHelper {
 
   //issues/{issue_id}.{format}
 
-  public Set<Issue> getIssue(int issueId) throws IOException {
-    String json = getExecutor().execute(Request.Get((app.getProperty("rest.baseUrl")+issueId+".json")))
+  public String getIssue(int issueId) throws IOException {
+    String response = getExecutor().execute(Request.Get(String.format(app.getProperty("rest.baseUrl") + "/issues/%s.json", issueId)))
             .returnContent().asString();
-    JsonElement issues = JsonParser.parseString(json).getAsJsonObject().get("issues");
-    return new Gson().fromJson(issues, new TypeToken<Set<Issue>>(){}.getType());
+    JsonParser parser = new JsonParser();
+    JsonElement jsonTree = parser.parse(response);
+    JsonObject jsonObject = jsonTree.getAsJsonObject();
+    JsonElement issues = jsonObject.get("issues").getAsJsonArray().get(0);
+    jsonObject = issues.getAsJsonObject();
+    return jsonObject.get("state_name").getAsString();
   }
 
   public int createIssue(Issue newIssue) throws IOException {

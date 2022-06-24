@@ -39,6 +39,7 @@ public class RestAssuredTests {
 
   private int createIssue(Issue newIssue){
     String response = RestAssured.given()
+            //.parameter()
             .parameter("subject", newIssue.getSubject())
             .parameter("description", newIssue.getDescription())
             .post("https://bugify.stqa.ru/api/issues.json").body().asString();

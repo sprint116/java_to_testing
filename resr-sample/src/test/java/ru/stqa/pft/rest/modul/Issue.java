@@ -40,7 +40,7 @@ public class Issue {
     return stateName;
   }
 
-  public Issue withStateName(String stateName) {
+  public Issue withStatusName(String stateName) {
     this.stateName = stateName;
     return this;
   }

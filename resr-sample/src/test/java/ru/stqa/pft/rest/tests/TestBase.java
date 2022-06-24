@@ -3,10 +3,8 @@ package ru.stqa.pft.rest.tests;
 import org.testng.SkipException;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.rest.appmanager.ApplicationManager;
-import ru.stqa.pft.rest.modul.Issue;
 
 import java.io.IOException;
-import java.util.Set;
 
 public class TestBase {
   public static final ApplicationManager app = new ApplicationManager();
@@ -17,9 +15,8 @@ public class TestBase {
   }
 
   public boolean isIssueOpen(int issueId) throws IOException {
-    Set<Issue> issues = app.rest().getIssue(issueId);
-    String status = issues.iterator().next().getStateName();
-    if (status.equals("resolved") || status.equals("closed")) {
+    String status = app.rest().getIssue(issueId);
+    if (status.equals("Resolved") || status.equals("Closed") || status.equals("Deleted")) {
       return false;
     }
     return true;
