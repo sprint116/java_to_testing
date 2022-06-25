@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-25T17:01:22" hostname="WIN-5BM3HSVULC6" time="2.495">
+  <properties/>
+  <testcase name="testContactCreation[0](ContactData{id=2147483647, firstName='FirstName_1', lastName='LastName_1', nickname='Nickname_1', photo='', address='Address_1', homePhone='+73333333333', mobile='+79999999999', workPhone='+78888888888', email='Test1@mail.ru', email2='', email3='', birthdayDay='1', birthdayMonth='January', birthdayYear='1990', address2='TestAddress2_1'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="2.495"/>
+  <system-out><![CDATA[21:01:22.943 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Start test testContactCreationwith parameters[ContactData{id=2147483647, firstName='FirstName_1', lastName='LastName_1', nickname='Nickname_1', photo='', address='Address_1', homePhone='+73333333333', mobile='+79999999999', workPhone='+78888888888', email='Test1@mail.ru', email2='', email3='', birthdayDay='1', birthdayMonth='January', birthdayYear='1990', address2='TestAddress2_1'}]
+Hibernate: 
+    select
+        g1_0.group_id,
+        g1_0.group_footer,
+        g1_0.group_header,
+        g1_0.group_name 
+    from
+        group_list g1_0
+Hibernate: 
+    select
+        g1_0.group_id,
+        g1_0.group_footer,
+        g1_0.group_header,
+        g1_0.group_name 
+    from
+        group_list g1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.address2,
+        c1_0.bday,
+        c1_0.bmonth,
+        c1_0.byear,
+        c1_0.email,
+        c1_0.email2,
+        c1_0.email3,
+        c1_0.firstName,
+        c1_0.home,
+        c1_0.lastName,
+        c1_0.mobile,
+        c1_0.nickname,
+        c1_0.work 
+    from
+        addressbook c1_0 
+    where
+        date_format('deprecated','%d %M %Y') is null
+Hibernate: 
+    select
+        g1_0.id,
+        g1_1.group_id,
+        g1_1.group_footer,
+        g1_1.group_header,
+        g1_1.group_name 
+    from
+        address_in_groups g1_0 
+    join
+        group_list g1_1 
+            on g1_1.group_id=g1_0.group_id 
+    where
+        g1_0.id=?
+Hibernate: 
+    select
+        g1_0.id,
+        g1_1.group_id,
+        g1_1.group_footer,
+        g1_1.group_header,
+        g1_1.group_name 
+    from
+        address_in_groups g1_0 
+    join
+        group_list g1_1 
+            on g1_1.group_id=g1_0.group_id 
+    where
+        g1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.address2,
+        c1_0.bday,
+        c1_0.bmonth,
+        c1_0.byear,
+        c1_0.email,
+        c1_0.email2,
+        c1_0.email3,
+        c1_0.firstName,
+        c1_0.home,
+        c1_0.lastName,
+        c1_0.mobile,
+        c1_0.nickname,
+        c1_0.work 
+    from
+        addressbook c1_0 
+    where
+        date_format('deprecated','%d %M %Y') is null
+Hibernate: 
+    select
+        g1_0.id,
+        g1_1.group_id,
+        g1_1.group_footer,
+        g1_1.group_header,
+        g1_1.group_name 
+    from
+        address_in_groups g1_0 
+    join
+        group_list g1_1 
+            on g1_1.group_id=g1_0.group_id 
+    where
+        g1_0.id=?
+Hibernate: 
+    select
+        g1_0.id,
+        g1_1.group_id,
+        g1_1.group_footer,
+        g1_1.group_header,
+        g1_1.group_name 
+    from
+        address_in_groups g1_0 
+    join
+        group_list g1_1 
+            on g1_1.group_id=g1_0.group_id 
+    where
+        g1_0.id=?
+Hibernate: 
+    select
+        g1_0.id,
+        g1_1.group_id,
+        g1_1.group_footer,
+        g1_1.group_header,
+        g1_1.group_name 
+    from
+        address_in_groups g1_0 
+    join
+        group_list g1_1 
+            on g1_1.group_id=g1_0.group_id 
+    where
+        g1_0.id=?
+21:01:25.442 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test testContactCreation
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

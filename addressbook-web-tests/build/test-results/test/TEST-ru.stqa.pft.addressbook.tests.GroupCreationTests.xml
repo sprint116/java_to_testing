@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-25T17:01:29" hostname="WIN-5BM3HSVULC6" time="1.014">
+  <properties/>
+  <testcase name="testGroupCreation[0](GroupData{id='2147483647', name='TestName_1'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.014"/>
+  <system-out><![CDATA[21:01:29.576 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Start test testGroupCreationwith parameters[GroupData{id='2147483647', name='TestName_1'}]
+Hibernate: 
+    select
+        g1_0.group_id,
+        g1_0.group_footer,
+        g1_0.group_header,
+        g1_0.group_name 
+    from
+        group_list g1_0
+Hibernate: 
+    select
+        g1_0.group_id,
+        g1_0.group_footer,
+        g1_0.group_header,
+        g1_0.group_name 
+    from
+        group_list g1_0
+21:01:30.591 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test testGroupCreation
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
