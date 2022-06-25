@@ -16,10 +16,7 @@ public class TestBase {
 // Re-opened In Progress Open
   public boolean isIssueOpen(int issueId) throws IOException {
     String status = app.rest().getIssue(issueId);
-    if (status.equals("Re-opened") || status.equals("In Progress") || status.equals("Open")) {
-      return true;
-    }
-    return false;
+    return status.equals("Re-opened") || status.equals("In Progress") || status.equals("Open");
   }
 
   public void skipIfNotFixed(int issueId) throws IOException {
