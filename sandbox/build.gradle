@@ -7,6 +7,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.5'
+    implementation 'org.testng:testng:7.6.0'
     implementation 'org.lable.rfc3881.auditlogger.adapter:slf4j:2.3'
+}
+
+test {
+	useTestNG()
 }

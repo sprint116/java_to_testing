@@ -11,3 +11,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:fluent-hc:4.5.13'
     implementation 'com.jayway.restassured:rest-assured:2.9.0'
 }
+
+test {
+    useTestNG()
+}
