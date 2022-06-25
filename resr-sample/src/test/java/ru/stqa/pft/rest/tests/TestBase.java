@@ -13,13 +13,13 @@ public class TestBase {
   public void setUp() throws IOException {
     app.init();
   }
-
+// Re-opened In Progress Open
   public boolean isIssueOpen(int issueId) throws IOException {
     String status = app.rest().getIssue(issueId);
-    if (status.equals("Resolved") || status.equals("Closed") || status.equals("Deleted")) {
-      return false;
+    if (status.equals("Re-opened") || status.equals("In Progress") || status.equals("Open")) {
+      return true;
     }
-    return true;
+    return false;
   }
 
   public void skipIfNotFixed(int issueId) throws IOException {
@@ -27,5 +27,4 @@ public class TestBase {
       throw new SkipException("Ignored because of issue " + issueId);
     }
   }
-
 }

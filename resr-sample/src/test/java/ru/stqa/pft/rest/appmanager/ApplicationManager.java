@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ApplicationManager {
-  private Properties properties;
+  private final Properties properties;
 
   private RestHelper restHelper;
 
