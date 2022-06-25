@@ -1,0 +1,58 @@
+[
+  {
+    "firstName": "FirstName_1",
+    "lastName": "LastName_1",
+    "nickname": "Nickname_1",
+    "address": "Address_1",
+    "homePhone": "+73333333333",
+    "mobile": "+79999999999",
+    "workPhone": "+78888888888",
+    "email": "Test1@mail.ru",
+    "birthdayDay": "1",
+    "birthdayMonth": "January",
+    "birthdayYear": "1990",
+    "address2": "TestAddress2_1"
+  },
+  {
+    "firstName": "FirstName_2",
+    "lastName": "LastName_2",
+    "nickname": "Nickname_2",
+    "address": "Address_2",
+    "homePhone": "+73333333333",
+    "mobile": "+79999999999",
+    "workPhone": "+78888888888",
+    "email": "Test2@mail.ru",
+    "birthdayDay": "2",
+    "birthdayMonth": "January",
+    "birthdayYear": "1990",
+    "address2": "TestAddress2_2"
+  },
+  {
+    "firstName": "FirstName_3",
+    "lastName": "LastName_3",
+    "nickname": "Nickname_3",
+    "address": "Address_3",
+    "homePhone": "+73333333333",
+    "mobile": "+79999999999",
+    "workPhone": "+78888888888",
+    "email": "Test3@mail.ru",
+    "birthdayDay": "3",
+    "birthdayMonth": "January",
+    "birthdayYear": "1990",
+    "address2": "TestAddress2_3"
+  },
+  {
+    "firstName": "FirstName_4",
+    "lastName": "LastName_4",
+    "nickname": "Nickname_4",
+    "address": "Address_4",
+    "homePhone": "+73333333333",
+    "mobile": "+79999999999",
+    "workPhone": "+78888888888",
+    "email": "Test4@mail.ru",
+    "birthdayDay": "4",
+    "birthdayMonth": "January",
+    "birthdayYear": "1990",
+    "address2": "TestAddress2_4"
+  }
+]
