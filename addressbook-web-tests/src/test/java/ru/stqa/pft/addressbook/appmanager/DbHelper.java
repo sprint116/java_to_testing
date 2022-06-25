@@ -35,7 +35,7 @@ public class DbHelper {
   public Contacts contacts(){
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List<ContactData> result = session.createQuery( "FROM ContactData WHERE DATE_FORMAT(deprecated, '%d %M %Y' ) is null").list();
+    List<ContactData> result = session.createQuery( "FROM ContactData WHERE DATE_FORMAT('deprecated', '%d %M %Y' ) is null").list();
     session.getTransaction().commit();
     session.close();
     return new Contacts(result);

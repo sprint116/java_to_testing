@@ -1,0 +1,35 @@
+<configuration>
+    <timestamp key="bySecond" datePattern="dd-MM-yyyy_HH.mm.ss"/>
+    <timestamp key="byDay" datePattern="dd.MM.yyyy"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>src/test/resources/logs/${byDay}/test-${bySecond}.log</file>
+        <append>true</append>
+        <!-- set immediateFlush to false for much higher logging throughput -->
+        <immediateFlush>true</immediateFlush>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="FILE" />
+    </root>
+
+    <root level="err">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

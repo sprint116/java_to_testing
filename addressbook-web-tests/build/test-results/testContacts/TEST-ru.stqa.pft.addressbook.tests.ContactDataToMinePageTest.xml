@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactDataToMinePageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-03T15:44:51" hostname="WIN-5BM3HSVULC6" time="0.438">
-  <properties/>
-  <testcase name="testContactPhones" classname="ru.stqa.pft.addressbook.tests.ContactDataToMinePageTest" time="0.438"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
