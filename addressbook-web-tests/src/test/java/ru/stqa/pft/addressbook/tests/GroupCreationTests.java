@@ -3,11 +3,8 @@ package ru.stqa.pft.addressbook.tests;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.json.TypeToken;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
@@ -28,7 +25,7 @@ public class GroupCreationTests extends TestBase {
   @DataProvider
   public Iterator<Object[]> validGroupsFromCsv() throws IOException {
     List<Object[]> list = new ArrayList<>();
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.csv")))){
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/genGroupsFiles/groups.csv")))){
       String line =reader.readLine();
       while (line != null){
         String[] split =line.split(";");
@@ -45,7 +42,7 @@ public class GroupCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validGroupsFromXml() throws IOException {
-      try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.xml")))){
+      try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/genGroupsFiles/groups.xml")))){
         String xml = "";
         String line = reader.readLine();
         while (line != null){
@@ -62,7 +59,7 @@ public class GroupCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validGroupsFromJson() throws IOException {
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("./src/test/resources/groups.json")))){
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("./src/test/resources/genGroupsFiles/groups.json")))){
       String json = "";
       String line = reader.readLine();
       while (line != null){

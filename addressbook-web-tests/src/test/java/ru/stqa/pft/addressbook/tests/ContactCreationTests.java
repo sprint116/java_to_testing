@@ -25,7 +25,7 @@ public class ContactCreationTests extends TestBase {
   @DataProvider
   public Iterator<Object[]> validContactsFromCsv() throws IOException {
     List<Object[]> list = new ArrayList<>();
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")))){
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/genContactsFile/contacts.csv")))){
       String line =reader.readLine();
       while (line != null){
         String[] split =line.split(";");
@@ -51,7 +51,7 @@ public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContactsFromXml() throws IOException {
-    try(BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")))){
+    try(BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/genContactsFile/contacts.xml")))){
       String xml = "";
       String line = reader.readLine();
       while (line !=null){
@@ -68,7 +68,7 @@ public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContactsFromJson() throws IOException {
-    try(BufferedReader reader = new BufferedReader(new FileReader(new File("./src/test/resources/contacts.json")))){
+    try(BufferedReader reader = new BufferedReader(new FileReader(new File("./src/test/resources/genContactsFile/contacts.json")))){
       String json = "";
       String line = reader.readLine();
       while (line != null){
@@ -88,7 +88,7 @@ public class ContactCreationTests extends TestBase {
     }
   }
 
-  @Test(dataProvider = "validContactsFromJson")
+  @Test(dataProvider = "validContactsFromCsv")
   public void testContactCreation(ContactData contact) {
     Groups groups = app.db().groups();
     ContactData newContact = app.cd;

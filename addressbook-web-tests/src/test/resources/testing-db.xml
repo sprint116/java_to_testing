@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="DB">
+        <classes>
+            <class name="ru.stqa.pft.addressbook.tests.DbConnectionTest" />
+            <class name="ru.stqa.pft.addressbook.tests.HbConnectionTestForContacts" />
+            <class name="ru.stqa.pft.addressbook.tests.HbConnectionTestForGroups" />
+        </classes>
+    </test>
+</suite>

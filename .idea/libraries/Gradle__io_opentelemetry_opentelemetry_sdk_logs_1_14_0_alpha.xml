@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.opentelemetry:opentelemetry-sdk-logs:1.14.0-alpha">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-logs/1.14.0-alpha/a4502792ea535ccaac79455e10fee1cb407fdc7c/opentelemetry-sdk-logs-1.14.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-logs/1.14.0-alpha/11c5f5a31f9f252b30f5be98ac9ee40739193650/opentelemetry-sdk-logs-1.14.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

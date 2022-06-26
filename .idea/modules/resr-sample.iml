@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="resr-sample" external.linked.project.path="$MODULE_DIR$/../../resr-sample" external.root.project.path="$MODULE_DIR$/../../resr-sample" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_18" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../resr-sample">
+      <excludeFolder url="file://$MODULE_DIR$/../../resr-sample/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../resr-sample/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../resr-sample/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

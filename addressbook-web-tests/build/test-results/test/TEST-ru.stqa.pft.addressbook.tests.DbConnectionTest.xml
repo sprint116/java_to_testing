@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.DbConnectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-25T17:01:29" hostname="WIN-5BM3HSVULC6" time="0.013">
-  <properties/>
-  <testcase name="testDbConnection" classname="ru.stqa.pft.addressbook.tests.DbConnectionTest" time="0.013"/>
-  <system-out><![CDATA[[GroupData{id='198', name='TestName 22/'}, GroupData{id='199', name='TestName_1'}]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

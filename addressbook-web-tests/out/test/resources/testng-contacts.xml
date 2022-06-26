@@ -3,10 +3,12 @@
 <suite name="Suite1" verbose="1" >
     <test name="Contacts">
         <classes>
+            <class name="ru.stqa.pft.addressbook.tests.ContactAddToGroupTest" />
             <class name="ru.stqa.pft.addressbook.tests.ContactCreationTests" />
             <class name="ru.stqa.pft.addressbook.tests.ContactDataToMinePageTest" />
             <class name="ru.stqa.pft.addressbook.tests.ContactModificationTests" />
             <class name="ru.stqa.pft.addressbook.tests.ContactDeletionTests" />
+            <class name="ru.stqa.pft.addressbook.tests.ContactRemFromGroupTest" />
         </classes>
     </test>
 </suite>

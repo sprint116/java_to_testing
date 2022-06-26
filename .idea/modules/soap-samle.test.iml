@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="soap-samle:test" external.linked.project.path="$MODULE_DIR$/../../soap-samle" external.root.project.path="$MODULE_DIR$/../../soap-samle" external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output-test url="file://$MODULE_DIR$/../../soap-samle/build/classes/java/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../soap-samle/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../soap-samle/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../soap-samle/src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="soap-samle.main" />
+    <orderEntry type="library" name="Gradle: org.testng:testng:7.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.ws:jaxws-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.bind:jaxb-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.main.javaee-api:javax.jws:3.1.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.messaging.saaj:saaj-impl:1.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.36" level="project" />
+    <orderEntry type="library" name="Gradle: com.beust:jcommander:1.82" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.soap:javax.xml.soap-api:1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: javax.activation:javax.activation-api:1.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jvnet.staxex:stax-ex:1.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:txw2:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.fastinfoset:FastInfoset:1.2.16" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.xml.soap:jakarta.xml.soap-api:1.4.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jvnet.mimepull:mimepull:1.9.11" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.webjars:jquery:3.6.0" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="soap-samle.main" />
+</module>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.main.javaee-api:javax.jws:3.1.2.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.glassfish.main.javaee-api/javax.jws/3.1.2.2/4d4949e3908e2b3cc80c7d92bb668b122bd3052d/javax.jws-3.1.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/org.glassfish.main.javaee-api/javax.jws/3.1.2.2/be8b5e1b0db5a16458735bdda8ad898666f25a4e/javax.jws-3.1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

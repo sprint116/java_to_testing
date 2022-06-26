@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-samle.iml" filepath="$PROJECT_DIR$/.idea/modules/github-samle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-samle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/github-samle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-samle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/github-samle.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/resr-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/resr-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/resr-sample.main.iml" filepath="$PROJECT_DIR$/.idea/modules/resr-sample.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/resr-sample.test.iml" filepath="$PROJECT_DIR$/.idea/modules/resr-sample.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-samle.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-samle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-samle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-samle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-samle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-samle.test.iml" />
+    </modules>
+  </component>
+</project>

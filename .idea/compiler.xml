@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="addressbook-web-tests" target="18" />
+      <module name="addressbook-web-tests.main" target="18" />
+      <module name="addressbook-web-tests.test" target="18" />
+      <module name="github-samle" target="18" />
+      <module name="github-samle.main" target="18" />
+      <module name="github-samle.test" target="18" />
+      <module name="mantis-tests" target="18" />
+      <module name="mantis-tests.main" target="18" />
+      <module name="mantis-tests.test" target="18" />
+      <module name="resr-sample" target="18" />
+      <module name="resr-sample.main" target="18" />
+      <module name="resr-sample.test" target="18" />
+      <module name="sandbox" target="18" />
+      <module name="sandbox.main" target="18" />
+      <module name="sandbox.test" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>

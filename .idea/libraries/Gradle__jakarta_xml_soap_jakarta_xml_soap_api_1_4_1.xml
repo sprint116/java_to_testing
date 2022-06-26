@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: jakarta.xml.soap:jakarta.xml.soap-api:1.4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/jakarta.xml.soap/jakarta.xml.soap-api/1.4.1/60a9a1d2e2d4e5f92ec42bcb713ca97d8fbb97de/jakarta.xml.soap-api-1.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sandbox/.gradle/caches/modules-2/files-2.1/jakarta.xml.soap/jakarta.xml.soap-api/1.4.1/ff2578ac2ad9666001037a3f98b49e22eb2386c0/jakarta.xml.soap-api-1.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
